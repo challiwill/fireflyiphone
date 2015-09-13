@@ -1,12 +1,5 @@
-//
-//  AppDelegate.m
-//  FireflyApp
-//
-//  Created by Black_Shark on 9/13/15.
-//  Copyright (c) 2015 Black_Shark. All rights reserved.
-//
-
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +9,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    CGRect frame = [[UIScreen mainScreen] bounds];
+    self.window = [[UIWindow alloc] initWithFrame:frame];
+    
+    // TODO initialize backend client
+    
+    self.window.rootViewController = [[ViewController alloc] init];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

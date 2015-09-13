@@ -10,7 +10,6 @@
 		9DA247071BA5EDE600088013 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA247061BA5EDE600088013 /* main.m */; };
 		9DA2470A1BA5EDE600088013 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA247091BA5EDE600088013 /* AppDelegate.m */; };
 		9DA2470D1BA5EDE600088013 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2470C1BA5EDE600088013 /* ViewController.m */; };
-		9DA247101BA5EDE600088013 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2470E1BA5EDE600088013 /* Main.storyboard */; };
 		9DA247121BA5EDE600088013 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DA247111BA5EDE600088013 /* Images.xcassets */; };
 		9DA247151BA5EDE600088013 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DA247131BA5EDE600088013 /* LaunchScreen.xib */; };
 		9DA247211BA5EDE700088013 /* FireflyAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA247201BA5EDE700088013 /* FireflyAppTests.m */; };
@@ -34,7 +33,6 @@
 		9DA247091BA5EDE600088013 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9DA2470B1BA5EDE600088013 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9DA2470C1BA5EDE600088013 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		9DA2470F1BA5EDE600088013 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9DA247111BA5EDE600088013 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9DA247141BA5EDE600088013 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9DA2471A1BA5EDE600088013 /* FireflyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FireflyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,7 +83,6 @@
 				9DA247091BA5EDE600088013 /* AppDelegate.m */,
 				9DA2470B1BA5EDE600088013 /* ViewController.h */,
 				9DA2470C1BA5EDE600088013 /* ViewController.m */,
-				9DA2470E1BA5EDE600088013 /* Main.storyboard */,
 				9DA247111BA5EDE600088013 /* Images.xcassets */,
 				9DA247131BA5EDE600088013 /* LaunchScreen.xib */,
 				9DA247041BA5EDE600088013 /* Supporting Files */,
@@ -199,7 +196,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DA247101BA5EDE600088013 /* Main.storyboard in Resources */,
 				9DA247151BA5EDE600088013 /* LaunchScreen.xib in Resources */,
 				9DA247121BA5EDE600088013 /* Images.xcassets in Resources */,
 			);
@@ -244,14 +240,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9DA2470E1BA5EDE600088013 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9DA2470F1BA5EDE600088013 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9DA247131BA5EDE600088013 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
