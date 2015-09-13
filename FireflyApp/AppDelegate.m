@@ -1,5 +1,6 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "FireflyClient.h"
 
 @interface AppDelegate ()
 
@@ -12,9 +13,9 @@
     CGRect frame = [[UIScreen mainScreen] bounds];
     self.window = [[UIWindow alloc] initWithFrame:frame];
     
-    // TODO initialize backend client
+    FireflyClient *backendClient = [[FireflyClient alloc] initWithUrlSession:[NSURLSession sharedSession] andOperationQueue:[NSOperationQueue mainQueue]];
     
-    self.window.rootViewController = [[ViewController alloc] init];
+    self.window.rootViewController = [[ViewController alloc] initWithBackendClient:backendClient];
     [self.window makeKeyAndVisible];
     
     return YES;

@@ -2,13 +2,19 @@
 
 @interface ViewController ()
 
+@property (nonatomic) FireflyClient *backendClient;
+
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+- (instancetype)initWithBackendClient:(FireflyClient *)backendClient
+{
+    self = [super init];
+    if (self) {
+        self.backendClient = backendClient;
+    }
+    return self;
 }
 
 - (void)didReceiveMemoryWarning {
