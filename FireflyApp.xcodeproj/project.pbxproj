@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		266AA2823C6DEC3E5DA8AB47 /* libPods-FireflyAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05A51A995421BD96BBCD00BA /* libPods-FireflyAppTests.a */; };
 		9DA247071BA5EDE600088013 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA247061BA5EDE600088013 /* main.m */; };
 		9DA2470A1BA5EDE600088013 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA247091BA5EDE600088013 /* AppDelegate.m */; };
 		9DA2470D1BA5EDE600088013 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2470C1BA5EDE600088013 /* ViewController.m */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05A51A995421BD96BBCD00BA /* libPods-FireflyAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FireflyAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DA247011BA5EDE600088013 /* FireflyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireflyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DA247051BA5EDE600088013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DA247061BA5EDE600088013 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,6 +43,8 @@
 		9DA247201BA5EDE700088013 /* FireflyAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FireflyAppTests.m; sourceTree = "<group>"; };
 		9DA2472C1BA5F2E400088013 /* FireflyClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FireflyClient.h; sourceTree = "<group>"; };
 		9DA2472D1BA5F2E400088013 /* FireflyClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FireflyClient.m; sourceTree = "<group>"; };
+		FCA25C8D0270E4D31F778837 /* Pods-FireflyAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireflyAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireflyAppTests/Pods-FireflyAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		FF6661EADC0CE9A8E3B93F18 /* Pods-FireflyAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireflyAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireflyAppTests/Pods-FireflyAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,18 +59,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				266AA2823C6DEC3E5DA8AB47 /* libPods-FireflyAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08168B572D8CE9A6444E5D44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05A51A995421BD96BBCD00BA /* libPods-FireflyAppTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		953F4F0E7B5DEED0CBA3D7AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FF6661EADC0CE9A8E3B93F18 /* Pods-FireflyAppTests.debug.xcconfig */,
+				FCA25C8D0270E4D31F778837 /* Pods-FireflyAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9DA246F81BA5EDE600088013 = {
 			isa = PBXGroup;
 			children = (
 				9DA247031BA5EDE600088013 /* FireflyApp */,
 				9DA2471D1BA5EDE600088013 /* FireflyAppTests */,
 				9DA247021BA5EDE600088013 /* Products */,
+				953F4F0E7B5DEED0CBA3D7AE /* Pods */,
+				08168B572D8CE9A6444E5D44 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,9 +169,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DA247271BA5EDE700088013 /* Build configuration list for PBXNativeTarget "FireflyAppTests" */;
 			buildPhases = (
+				98BA0833E3049795B7BB78BB /* Check Pods Manifest.lock */,
 				9DA247161BA5EDE600088013 /* Sources */,
 				9DA247171BA5EDE600088013 /* Frameworks */,
 				9DA247181BA5EDE600088013 /* Resources */,
+				74DAA25B5D0FE2C1D7858BA1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,6 +240,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		74DAA25B5D0FE2C1D7858BA1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FireflyAppTests/Pods-FireflyAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98BA0833E3049795B7BB78BB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9DA246FD1BA5EDE600088013 /* Sources */ = {
@@ -359,6 +418,7 @@
 		};
 		9DA247281BA5EDE700088013 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF6661EADC0CE9A8E3B93F18 /* Pods-FireflyAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -378,6 +438,7 @@
 		};
 		9DA247291BA5EDE700088013 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCA25C8D0270E4D31F778837 /* Pods-FireflyAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -410,6 +471,7 @@
 				9DA247261BA5EDE700088013 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9DA247271BA5EDE700088013 /* Build configuration list for PBXNativeTarget "FireflyAppTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +480,7 @@
 				9DA247291BA5EDE700088013 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
