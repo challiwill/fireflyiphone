@@ -2,7 +2,7 @@
 CLANG_CXX_LANGUAGE_STANDARD = ${CEDAR_CLANG_CXX_LANGUAGE_STANDARD}
 CLANG_CXX_LIBRARY = ${CEDAR_CLANG_CXX_LIBRARY}
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/Cedar" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Cedar"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/Cedar" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/Cedar" "${PODS_ROOT}/Headers/Public/OHHTTPStubs"
 OTHER_LDFLAGS = ${CEDAR_OTHER_LDFLAGS}
 PODS_ROOT = ${SRCROOT}
 SKIP_INSTALL = YES
