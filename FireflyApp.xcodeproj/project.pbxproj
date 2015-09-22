@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		266AA2823C6DEC3E5DA8AB47 /* libPods-FireflyAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05A51A995421BD96BBCD00BA /* libPods-FireflyAppTests.a */; };
+		9D19A3E71BB11E4B000D3C07 /* AppDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D19A3E61BB11E4B000D3C07 /* AppDelegateSpec.mm */; };
 		9DA247071BA5EDE600088013 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA247061BA5EDE600088013 /* main.m */; };
 		9DA2470A1BA5EDE600088013 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA247091BA5EDE600088013 /* AppDelegate.m */; };
 		9DA2470D1BA5EDE600088013 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2470C1BA5EDE600088013 /* ViewController.m */; };
 		9DA247121BA5EDE600088013 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DA247111BA5EDE600088013 /* Images.xcassets */; };
 		9DA247151BA5EDE600088013 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DA247131BA5EDE600088013 /* LaunchScreen.xib */; };
-		9DA247211BA5EDE700088013 /* FireflyAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA247201BA5EDE700088013 /* FireflyAppTests.m */; };
 		9DA2472E1BA5F2E400088013 /* FireflyClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2472D1BA5F2E400088013 /* FireflyClient.m */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		05A51A995421BD96BBCD00BA /* libPods-FireflyAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FireflyAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D19A3E61BB11E4B000D3C07 /* AppDelegateSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegateSpec.mm; sourceTree = "<group>"; };
 		9DA247011BA5EDE600088013 /* FireflyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireflyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DA247051BA5EDE600088013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DA247061BA5EDE600088013 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,7 +41,6 @@
 		9DA247141BA5EDE600088013 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9DA2471A1BA5EDE600088013 /* FireflyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FireflyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DA2471F1BA5EDE600088013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9DA247201BA5EDE700088013 /* FireflyAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FireflyAppTests.m; sourceTree = "<group>"; };
 		9DA2472C1BA5F2E400088013 /* FireflyClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FireflyClient.h; sourceTree = "<group>"; };
 		9DA2472D1BA5F2E400088013 /* FireflyClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FireflyClient.m; sourceTree = "<group>"; };
 		FCA25C8D0270E4D31F778837 /* Pods-FireflyAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireflyAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireflyAppTests/Pods-FireflyAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,8 +131,8 @@
 		9DA2471D1BA5EDE600088013 /* FireflyAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				9DA247201BA5EDE700088013 /* FireflyAppTests.m */,
 				9DA2471E1BA5EDE600088013 /* Supporting Files */,
+				9D19A3E61BB11E4B000D3C07 /* AppDelegateSpec.mm */,
 			);
 			path = FireflyAppTests;
 			sourceTree = "<group>";
@@ -290,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DA247211BA5EDE700088013 /* FireflyAppTests.m in Sources */,
+				9D19A3E71BB11E4B000D3C07 /* AppDelegateSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
