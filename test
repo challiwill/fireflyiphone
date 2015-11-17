@@ -1,0 +1,1 @@
+xcodebuild -workspace FireflyApp.xcworkspace -scheme FireflyApp -destination platform='iOS Simulator',OS=8.3,name='iPhone 6' clean test

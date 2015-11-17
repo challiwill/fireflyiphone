@@ -1,10 +1,15 @@
 #import <Foundation/Foundation.h>
 
+@class AFHTTPRequestOperationManager;
+
 @interface FireflyClient : NSObject
 
-@property (nonatomic, readonly) NSURLSession *urlSession;
-@property (nonatomic, readonly) NSOperationQueue *mainQueue;
+@property (nonatomic, readonly) NSString *token;
 
-- (instancetype) initWithUrlSession:(NSURLSession *)urlSession andOperationQueue:(NSOperationQueue *)mainQueue;
+- (instancetype)initWithManager:(AFHTTPRequestOperationManager *)manager;
 
+- (void)signInWithUsername:(NSString *)username
+                  Password:(NSString *)password
+              SuccessBlock:(void (^)())successBlock
+              FailureBlock:(void (^)())failureBlock;
 @end
