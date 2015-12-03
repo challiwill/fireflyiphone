@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		266AA2823C6DEC3E5DA8AB47 /* libPods-FireflyAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05A51A995421BD96BBCD00BA /* libPods-FireflyAppTests.a */; };
 		9D19A3E71BB11E4B000D3C07 /* AppDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D19A3E61BB11E4B000D3C07 /* AppDelegateSpec.mm */; };
+		9D19A3E91BB11EC5000D3C07 /* FireflyClientSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D19A3E81BB11EC5000D3C07 /* FireflyClientSpec.mm */; };
 		9DA247071BA5EDE600088013 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA247061BA5EDE600088013 /* main.m */; };
 		9DA2470A1BA5EDE600088013 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA247091BA5EDE600088013 /* AppDelegate.m */; };
 		9DA2470D1BA5EDE600088013 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2470C1BA5EDE600088013 /* ViewController.m */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		05A51A995421BD96BBCD00BA /* libPods-FireflyAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FireflyAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D19A3E61BB11E4B000D3C07 /* AppDelegateSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegateSpec.mm; sourceTree = "<group>"; };
+		9D19A3E81BB11EC5000D3C07 /* FireflyClientSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FireflyClientSpec.mm; sourceTree = "<group>"; };
 		9DA247011BA5EDE600088013 /* FireflyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireflyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DA247051BA5EDE600088013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DA247061BA5EDE600088013 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				9DA2471E1BA5EDE600088013 /* Supporting Files */,
 				9D19A3E61BB11E4B000D3C07 /* AppDelegateSpec.mm */,
+				9D19A3E81BB11EC5000D3C07 /* FireflyClientSpec.mm */,
 			);
 			path = FireflyAppTests;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D19A3E71BB11E4B000D3C07 /* AppDelegateSpec.mm in Sources */,
+				9D19A3E91BB11EC5000D3C07 /* FireflyClientSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
