@@ -10,6 +10,8 @@ SPEC_BEGIN(FireflyClientSpec)
 describe(@"FireflyClient", ^{
     __block FireflyClient *subject;
     __block AFHTTPRequestOperationManager *manager;
+    __block bool successBlockCalled;
+    __block bool failureBlockCalled;
     
     
     beforeEach(^{
@@ -28,6 +30,8 @@ describe(@"FireflyClient", ^{
             parameters = nil;
             simulateSuccess = nil;
             simulateFailure = nil;
+            successBlockCalled = false;
+            failureBlockCalled = false;
             manager stub_method(@selector(POST:parameters:success:failure:))
             .and_do_block(^id (
                                  NSString *incomingURLString,
@@ -45,8 +49,8 @@ describe(@"FireflyClient", ^{
             
             [subject signInWithUsername:@"testemail@berkeley.edu"
                                Password:@"password"
-                           SuccessBlock:^void(){NSLog(@"GREAT-SUCCESS");}
-                           FailureBlock:^void(){NSLog(@"GREAT-FAILURE");}];
+                           SuccessBlock:^void(){successBlockCalled = true;}
+                           FailureBlock:^void(){failureBlockCalled = true;}];
         });
         
         it(@"should send a request to the correct URL", ^{
@@ -77,6 +81,10 @@ describe(@"FireflyClient", ^{
             it(@"should update the auth token", ^{
                 subject.token should equal(@"new-token");
             });
+            
+            it(@"should call the SuccessBlock", ^{
+                successBlockCalled should be_truthy;
+            });
         });
         
         context(@"when the user/password is invalid and the request fails", ^{
@@ -87,6 +95,10 @@ describe(@"FireflyClient", ^{
             
             it(@"should not update the auth token", ^{
                 subject.token should be_empty;
+            });
+            
+            it(@"should call the FailureBlock", ^{
+                failureBlockCalled should be_truthy;
             });
         });
     });

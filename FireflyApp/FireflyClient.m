@@ -36,15 +36,20 @@
             parameters:params
                success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
+         // TODO remove log statements or update to not leak tokens
          if (operation.response != nil) {
              self.token = [operation.response.allHeaderFields objectForKey:@"access-token"];
-             NSLog(@"TOKEN: %@", self.token);
+             NSLog(@"signed in");
+             NSLog(@"received TOKEN: %@", self.token);
          }
          NSLog(@"JSON: %@", responseObject);
+         return successBlock();
      }
                failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
+         NSLog(@"failed to sign in");
          NSLog(@"ERROR: %@", error);
+         return failureBlock();
      }];
 }
 

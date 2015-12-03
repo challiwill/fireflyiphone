@@ -60,7 +60,7 @@
     [self.backendClient signInWithUsername:self.emailField.text
                                   Password:self.passwordField.text
                               SuccessBlock:^void () {NSLog(@"Great Success!"); return;}
-                              FailureBlock:^void () {return;}];
+                              FailureBlock:^void () {NSLog(@"Great Failure!"); return;}];
 }
 
 @end
