@@ -3,6 +3,7 @@
 
 target 'FireflyApp' do
 pod 'AFNetworking'
+pod 'Mapbox-iOS-SDK'
 end
 
 target 'FireflyAppTests' do

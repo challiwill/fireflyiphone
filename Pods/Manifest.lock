@@ -21,18 +21,37 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Cedar (0.11.3)
+  - FMDB (2.3):
+    - FMDB/standard (= 2.3)
+  - FMDB/common (2.3)
+  - FMDB/standard (2.3):
+    - FMDB/common
+  - GRMustache (7.3.0):
+    - JRSwizzle (~> 1.0)
+  - JRSwizzle (1.0)
+  - Mapbox-iOS-SDK (1.6.0):
+    - FMDB (= 2.3)
+    - GRMustache (= 7.3.0)
+    - SMCalloutView (= 2.0)
   - OHHTTPStubs (3.1.11):
     - OHHTTPStubs/Core (= 3.1.11)
   - OHHTTPStubs/Core (3.1.11)
+  - SMCalloutView (2.0)
 
 DEPENDENCIES:
   - AFNetworking
   - Cedar
+  - Mapbox-iOS-SDK
   - OHHTTPStubs
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
   Cedar: ab1ea4e5c8af4ee4a8fa0452936679861876dc80
+  FMDB: 31ec26773c7f7b7890a6038235a1f2bbd933a7cb
+  GRMustache: efecd3b603f0a7a99cf6bdf3998782ee0c465726
+  JRSwizzle: 30da7a2c539a4ebf954b16d15f6dd8221c9f6fa5
+  Mapbox-iOS-SDK: 189a35013e100f1464cd2f9f6c489d6326fbb927
   OHHTTPStubs: e6ecc3fd4fa11b2cfb5f4823421bddc95a82913d
+  SMCalloutView: c1906604d47c058400ade5c9d52ab98aa77b7e76
 
 COCOAPODS: 0.38.2

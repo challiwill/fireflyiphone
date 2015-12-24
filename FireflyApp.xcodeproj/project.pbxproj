@@ -18,6 +18,7 @@
 		9DA247121BA5EDE600088013 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DA247111BA5EDE600088013 /* Images.xcassets */; };
 		9DA247151BA5EDE600088013 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DA247131BA5EDE600088013 /* LaunchScreen.xib */; };
 		9DA2472E1BA5F2E400088013 /* FireflyClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2472D1BA5F2E400088013 /* FireflyClient.m */; };
+		9DA531C51C2C542C008BECCA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9DA531C41C2C542C008BECCA /* Settings.bundle */; };
 		9DDE31201C13CA1900245408 /* MapScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE311F1C13CA1900245408 /* MapScreenController.m */; };
 		9DDE31261C15EC1200245408 /* StandardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE31251C15EC1200245408 /* StandardSegue.m */; };
 		9DDE312B1C21C4E600245408 /* MapScreenControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE312A1C21C4E600245408 /* MapScreenControllerSpec.mm */; };
@@ -55,6 +56,7 @@
 		9DA2471F1BA5EDE600088013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DA2472C1BA5F2E400088013 /* FireflyClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FireflyClient.h; sourceTree = "<group>"; };
 		9DA2472D1BA5F2E400088013 /* FireflyClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FireflyClient.m; sourceTree = "<group>"; };
+		9DA531C41C2C542C008BECCA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9DDE311E1C13CA1900245408 /* MapScreenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapScreenController.h; sourceTree = "<group>"; };
 		9DDE311F1C13CA1900245408 /* MapScreenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapScreenController.m; sourceTree = "<group>"; };
 		9DDE31241C15EC1200245408 /* StandardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardSegue.h; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		9DA247031BA5EDE600088013 /* FireflyApp */ = {
 			isa = PBXGroup;
 			children = (
+				9DA531C41C2C542C008BECCA /* Settings.bundle */,
 				9DA247081BA5EDE600088013 /* AppDelegate.h */,
 				9DA247091BA5EDE600088013 /* AppDelegate.m */,
 				9DA2470B1BA5EDE600088013 /* SignInController.h */,
@@ -259,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DA531C51C2C542C008BECCA /* Settings.bundle in Resources */,
 				9DA247151BA5EDE600088013 /* LaunchScreen.xib in Resources */,
 				9DA247121BA5EDE600088013 /* Images.xcassets in Resources */,
 				9D698B9C1BE1F211004014A1 /* server.cer in Resources */,
