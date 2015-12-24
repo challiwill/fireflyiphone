@@ -1,5 +1,7 @@
 #import "SignInController.h"
 #import "FireflyClient.h"
+#import "MapScreenController.h"
+#import "StandardSegue.h"
 
 @interface SignInController ()
 
@@ -38,7 +40,7 @@
     [self.view addSubview:self.signInButton];
 }
 
-- (void) viewDidLoad
+- (void)viewDidLoad
 {
     [super viewDidLoad];
 
@@ -57,10 +59,22 @@
 
 - (void)signIn
 {
+    // TODO some level of checks on user/password here (at least not empty)
     [self.backendClient signInWithUsername:self.emailField.text
                                   Password:self.passwordField.text
-                              SuccessBlock:^void () {NSLog(@"Great Success!"); return;}
-                              FailureBlock:^void () {NSLog(@"Great Failure!"); return;}];
+                              SuccessBlock:^void () {[self segueToMapScreen];}
+                              FailureBlock:^void () {NSLog(@"Login failed");}];
 }
 
+- (void)segueToMapScreen
+{
+    MapScreenController *mapScreenController = [[MapScreenController alloc]
+                                                initWithBackendClient:self.backendClient];
+    StandardSegue *segue = [[StandardSegue alloc]
+                                initWithIdentifier:@"signInToMapScreen"
+                                            source:self
+                                       destination:mapScreenController];
+    [self prepareForSegue:segue sender:self];
+    [segue perform];
+}
 @end

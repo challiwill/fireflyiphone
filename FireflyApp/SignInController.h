@@ -10,6 +10,8 @@
 @property (nonatomic, readonly) UIButton *signInButton;
 
 - (instancetype)initWithBackendClient:(FireflyClient *)backendClient;
+- (void)signIn;
+- (void)segueToMapScreen;
 
 @end
 

@@ -42,8 +42,6 @@ describe(@"AppDelegate", ^{
             it(@"should inject the root view controller's properties", ^{
                 SignInController *signInController = (SignInController *)subject.window.rootViewController;
                 signInController.backendClient should_not be_nil;
-//                signInController.backendClient.urlSession should_not be_nil;
-//                signInController.backendClient.mainQueue should be_same_instance_as([NSOperationQueue mainQueue]);
             });
             
             it(@"should make the window the key window", ^{
