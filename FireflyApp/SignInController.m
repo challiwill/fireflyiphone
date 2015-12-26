@@ -2,6 +2,7 @@
 #import "FireflyClient.h"
 #import "MapScreenController.h"
 #import "StandardSegue.h"
+#import "Mapbox/Mapbox.h"
 
 @interface SignInController ()
 
@@ -68,8 +69,10 @@
 
 - (void)segueToMapScreen
 {
+    MGLMapView *mapView = [[MGLMapView alloc] initWithFrame:self.view.bounds];
     MapScreenController *mapScreenController = [[MapScreenController alloc]
-                                                initWithBackendClient:self.backendClient];
+                                                initWithBackendClient:self.backendClient
+                                                andMapView:mapView];
     StandardSegue *segue = [[StandardSegue alloc]
                                 initWithIdentifier:@"signInToMapScreen"
                                             source:self

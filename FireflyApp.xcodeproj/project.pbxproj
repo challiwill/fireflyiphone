@@ -22,7 +22,7 @@
 		9DDE31201C13CA1900245408 /* MapScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE311F1C13CA1900245408 /* MapScreenController.m */; };
 		9DDE31261C15EC1200245408 /* StandardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE31251C15EC1200245408 /* StandardSegue.m */; };
 		9DDE312B1C21C4E600245408 /* MapScreenControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE312A1C21C4E600245408 /* MapScreenControllerSpec.mm */; };
-		B6DEA62B6F25E7D803D1C023 /* libPods-FireflyApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 095FEB81D5DA7F00FAE4AB09 /* libPods-FireflyApp.a */; };
+		FD6306847ACBEE67AB6F12F4 /* libPods-FireflyApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3832A687DE50C5E722BCF178 /* libPods-FireflyApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 
 /* Begin PBXFileReference section */
 		05A51A995421BD96BBCD00BA /* libPods-FireflyAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FireflyAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		095FEB81D5DA7F00FAE4AB09 /* libPods-FireflyApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FireflyApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3832A687DE50C5E722BCF178 /* libPods-FireflyApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FireflyApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F1A7C2291FD3E68395EA56 /* Pods-FireflyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireflyApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireflyApp/Pods-FireflyApp.release.xcconfig"; sourceTree = "<group>"; };
 		9D19A3E61BB11E4B000D3C07 /* AppDelegateSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegateSpec.mm; sourceTree = "<group>"; };
 		9D19A3E81BB11EC5000D3C07 /* FireflyClientSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FireflyClientSpec.mm; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6DEA62B6F25E7D803D1C023 /* libPods-FireflyApp.a in Frameworks */,
+				FD6306847ACBEE67AB6F12F4 /* libPods-FireflyApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				05A51A995421BD96BBCD00BA /* libPods-FireflyAppTests.a */,
-				095FEB81D5DA7F00FAE4AB09 /* libPods-FireflyApp.a */,
+				3832A687DE50C5E722BCF178 /* libPods-FireflyApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -190,6 +190,7 @@
 				9DA246FE1BA5EDE600088013 /* Frameworks */,
 				9DA246FF1BA5EDE600088013 /* Resources */,
 				C0D2B87D22E6184FAC2C7956 /* Copy Pods Resources */,
+				6B0BFC116590E4C3FBF4CEAA /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -209,6 +210,7 @@
 				9DA247171BA5EDE600088013 /* Frameworks */,
 				9DA247181BA5EDE600088013 /* Resources */,
 				74DAA25B5D0FE2C1D7858BA1 /* Copy Pods Resources */,
+				863DD35F47FE78146C84256D /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -294,6 +296,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		6B0BFC116590E4C3FBF4CEAA /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FireflyApp/Pods-FireflyApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		74DAA25B5D0FE2C1D7858BA1 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -307,6 +324,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FireflyAppTests/Pods-FireflyAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		863DD35F47FE78146C84256D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FireflyAppTests/Pods-FireflyAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		98BA0833E3049795B7BB78BB /* Check Pods Manifest.lock */ = {
