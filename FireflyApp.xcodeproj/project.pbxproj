@@ -12,6 +12,10 @@
 		9D19A3E91BB11EC5000D3C07 /* FireflyClientSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D19A3E81BB11EC5000D3C07 /* FireflyClientSpec.mm */; };
 		9D1FD19E1BB27B0900577EB7 /* SignInControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FD19D1BB27B0900577EB7 /* SignInControllerSpec.mm */; };
 		9D698B9C1BE1F211004014A1 /* server.cer in Resources */ = {isa = PBXBuildFile; fileRef = 9D698B9B1BE1F211004014A1 /* server.cer */; };
+		9D81997A1C49517F006EE164 /* LocationManagerDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D8199791C49517F006EE164 /* LocationManagerDelegateSpec.mm */; };
+		9D81997C1C4E91F9006EE164 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D81997B1C4E91F9006EE164 /* CoreLocation.framework */; };
+		9D81997F1C4E9426006EE164 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D81997B1C4E91F9006EE164 /* CoreLocation.framework */; };
+		9D98660B1C494B3D00B17E05 /* LocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D98660A1C494B3D00B17E05 /* LocationManagerDelegate.m */; };
 		9DA247071BA5EDE600088013 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA247061BA5EDE600088013 /* main.m */; };
 		9DA2470A1BA5EDE600088013 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA247091BA5EDE600088013 /* AppDelegate.m */; };
 		9DA2470D1BA5EDE600088013 /* SignInController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2470C1BA5EDE600088013 /* SignInController.m */; };
@@ -43,6 +47,11 @@
 		9D19A3E81BB11EC5000D3C07 /* FireflyClientSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FireflyClientSpec.mm; sourceTree = "<group>"; };
 		9D1FD19D1BB27B0900577EB7 /* SignInControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SignInControllerSpec.mm; sourceTree = "<group>"; };
 		9D698B9B1BE1F211004014A1 /* server.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = server.cer; sourceTree = "<group>"; };
+		9D8199791C49517F006EE164 /* LocationManagerDelegateSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LocationManagerDelegateSpec.mm; sourceTree = "<group>"; };
+		9D81997B1C4E91F9006EE164 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9D81997D1C4E92EA006EE164 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9D9866091C494B3D00B17E05 /* LocationManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManagerDelegate.h; sourceTree = "<group>"; };
+		9D98660A1C494B3D00B17E05 /* LocationManagerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManagerDelegate.m; sourceTree = "<group>"; };
 		9DA247011BA5EDE600088013 /* FireflyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireflyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DA247051BA5EDE600088013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DA247061BA5EDE600088013 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -72,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D81997C1C4E91F9006EE164 /* CoreLocation.framework in Frameworks */,
 				FD6306847ACBEE67AB6F12F4 /* libPods-FireflyApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D81997F1C4E9426006EE164 /* CoreLocation.framework in Frameworks */,
 				266AA2823C6DEC3E5DA8AB47 /* libPods-FireflyAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +101,8 @@
 		08168B572D8CE9A6444E5D44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D81997D1C4E92EA006EE164 /* Foundation.framework */,
+				9D81997B1C4E91F9006EE164 /* CoreLocation.framework */,
 				05A51A995421BD96BBCD00BA /* libPods-FireflyAppTests.a */,
 				3832A687DE50C5E722BCF178 /* libPods-FireflyApp.a */,
 			);
@@ -137,6 +150,8 @@
 				9DA2470C1BA5EDE600088013 /* SignInController.m */,
 				9DDE311E1C13CA1900245408 /* MapScreenController.h */,
 				9DDE311F1C13CA1900245408 /* MapScreenController.m */,
+				9D9866091C494B3D00B17E05 /* LocationManagerDelegate.h */,
+				9D98660A1C494B3D00B17E05 /* LocationManagerDelegate.m */,
 				9DA247111BA5EDE600088013 /* Images.xcassets */,
 				9DA247131BA5EDE600088013 /* LaunchScreen.xib */,
 				9DA247041BA5EDE600088013 /* Supporting Files */,
@@ -166,6 +181,7 @@
 				9D19A3E81BB11EC5000D3C07 /* FireflyClientSpec.mm */,
 				9D1FD19D1BB27B0900577EB7 /* SignInControllerSpec.mm */,
 				9DDE312A1C21C4E600245408 /* MapScreenControllerSpec.mm */,
+				9D8199791C49517F006EE164 /* LocationManagerDelegateSpec.mm */,
 			);
 			path = FireflyAppTests;
 			sourceTree = "<group>";
@@ -233,6 +249,11 @@
 				TargetAttributes = {
 					9DA247001BA5EDE600088013 = {
 						CreatedOnToolsVersion = 6.3.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					9DA247191BA5EDE600088013 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -383,6 +404,7 @@
 				9DA2470A1BA5EDE600088013 /* AppDelegate.m in Sources */,
 				9DA2472E1BA5F2E400088013 /* FireflyClient.m in Sources */,
 				9DA247071BA5EDE600088013 /* main.m in Sources */,
+				9D98660B1C494B3D00B17E05 /* LocationManagerDelegate.m in Sources */,
 				9DDE31201C13CA1900245408 /* MapScreenController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,6 +416,7 @@
 				9D19A3E71BB11E4B000D3C07 /* AppDelegateSpec.mm in Sources */,
 				9D1FD19E1BB27B0900577EB7 /* SignInControllerSpec.mm in Sources */,
 				9D19A3E91BB11EC5000D3C07 /* FireflyClientSpec.mm in Sources */,
+				9D81997A1C49517F006EE164 /* LocationManagerDelegateSpec.mm in Sources */,
 				9DDE312B1C21C4E600245408 /* MapScreenControllerSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

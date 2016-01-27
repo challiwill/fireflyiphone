@@ -1,30 +1,34 @@
 #import "MapScreenController.h"
-#import "FireflyClient.h"
-#import "Mapbox/Mapbox.h"
 
 @interface MapScreenController ()
 
 @property (nonatomic) FireflyClient *backendClient;
 @property (nonatomic) MGLMapView *mapView;
+@property (nonatomic) CLLocationManager *locationManager;
+@property (nonatomic) LocationManagerDelegate *locationDelegate;
 
 @end
 
+CLLocation *BERKELEY;
+
 @implementation MapScreenController
 
-
-- (instancetype)initWithBackendClient:(FireflyClient *)backendClient andMapView:(MGLMapView *)mapView
+- (instancetype)initWithBackendClient:(FireflyClient *)backendClient LocationManager:(CLLocationManager *) locationManager andMapView:(MGLMapView *)mapView
 {
     self = [super init];
     if (self) {
         self.backendClient = backendClient;
         self.mapView = mapView;
+        self.locationManager = locationManager;
+        BERKELEY = [[CLLocation alloc] initWithLatitude:37.871912 longitude:-122.258537];
     }
     return self;
 }
 
 - (void)loadView
 {
-    self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 800)];
+    CGRect frame = [[UIScreen mainScreen] bounds];
+    self.view = [[UIView alloc] initWithFrame:frame];
     [self.view addSubview:self.mapView];
 }
 
@@ -33,10 +37,23 @@
     [super viewDidLoad];
     
     self.mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    // set the map's center coordinate
-    [self.mapView setCenterCoordinate:CLLocationCoordinate2DMake(38.894368, -77.036487)
+    [self.mapView setCenterCoordinate:BERKELEY.coordinate
                             zoomLevel:15
                              animated:NO];
+    
+    self.locationDelegate =[[LocationManagerDelegate alloc] initWithMapView:self.mapView];
+    self.locationManager.delegate = self.locationDelegate;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.mapView setCenterCoordinate:BERKELEY.coordinate
+                            zoomLevel:15
+                             animated:NO];
+    
+    CLAuthorizationStatus authStatus = CLLocationManager.authorizationStatus;
+    if (authStatus == kCLAuthorizationStatusAuthorizedAlways) {
+        [self.locationManager startUpdatingLocation];
+    } else {
+        [self.locationManager requestAlwaysAuthorization];
+    }
 }
 
 @end

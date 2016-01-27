@@ -1,5 +1,4 @@
 #import "SignInController.h"
-#import "FireflyClient.h"
 #import "MapScreenController.h"
 #import "StandardSegue.h"
 #import "Mapbox/Mapbox.h"
@@ -60,7 +59,9 @@
 
 - (void)signIn
 {
-    // TODO some level of checks on user/password here (at least not empty)
+    self.emailField.text = @"testemail@berkeley.edu";
+    self.passwordField.text = @"password";
+    // TODO some level of checks on user/password here (at least not empty)?
     [self.backendClient signInWithUsername:self.emailField.text
                                   Password:self.passwordField.text
                               SuccessBlock:^void () {[self segueToMapScreen];}
@@ -70,8 +71,10 @@
 - (void)segueToMapScreen
 {
     MGLMapView *mapView = [[MGLMapView alloc] initWithFrame:self.view.bounds];
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
     MapScreenController *mapScreenController = [[MapScreenController alloc]
                                                 initWithBackendClient:self.backendClient
+                                                LocationManager:locationManager
                                                 andMapView:mapView];
     StandardSegue *segue = [[StandardSegue alloc]
                                 initWithIdentifier:@"signInToMapScreen"
