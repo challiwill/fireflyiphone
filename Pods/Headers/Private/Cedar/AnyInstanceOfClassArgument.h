@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/Doubles/Arguments/AnyInstanceOfClassArgument.h
+../../../Cedar/Source/Headers/Public/Doubles/Arguments/AnyInstanceOfClassArgument.h

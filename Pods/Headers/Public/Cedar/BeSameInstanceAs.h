@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/Matchers/Base/BeSameInstanceAs.h
+../../../Cedar/Source/Headers/Public/Matchers/Base/BeSameInstanceAs.h

@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/Matchers/UIKit/UIKitComparatorsContainer.h
+../../../Cedar/Source/Headers/Public/Matchers/UIKit/iOS/UIKitComparatorsContainer.h

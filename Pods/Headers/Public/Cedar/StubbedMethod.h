@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/Doubles/StubbedMethod.h
+../../../Cedar/Source/Headers/Public/Doubles/StubbedMethod.h

@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/CDRSpecFailure.h
+../../../Cedar/Source/Headers/Public/CDRSpecFailure.h

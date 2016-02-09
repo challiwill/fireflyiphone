@@ -3,7 +3,7 @@ platform :ios, '8.0'
 
 target 'FireflyApp' do
 pod 'AFNetworking'
-pod 'Mapbox-iOS-SDK', '~> 3.0.0'
+pod 'Mapbox-iOS-SDK'
 end
 
 target 'FireflyAppTests' do

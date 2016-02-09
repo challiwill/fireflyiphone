@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/Reporters/CDRExampleReporter.h
+../../../Cedar/Source/Headers/Public/Reporters/CDRExampleReporter.h

@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/Matchers/ShouldSyntax.h
+../../../Cedar/Source/Headers/Public/Matchers/ShouldSyntax.h

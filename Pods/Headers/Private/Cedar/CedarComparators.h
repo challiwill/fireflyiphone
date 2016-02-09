@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/Matchers/CedarComparators.h
+../../../Cedar/Source/Headers/Public/Matchers/CedarComparators.h

@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/Matchers/UIKit/UIGeometryStringifiers.h
+../../../Cedar/Source/Headers/Public/Matchers/UIKit/UIGeometryStringifiers.h

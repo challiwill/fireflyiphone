@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/Reporters/CDROTestReporter.h
+../../../Cedar/Source/Headers/Public/Reporters/CDROTestReporter.h

@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/Matchers/MatcherTemplate.h
+../../../Cedar/Source/Headers/Public/Matchers/MatcherTemplate.h

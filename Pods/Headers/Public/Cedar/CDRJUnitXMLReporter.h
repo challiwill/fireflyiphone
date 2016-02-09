@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/Reporters/CDRJUnitXMLReporter.h
+../../../Cedar/Source/Headers/Public/Reporters/CDRJUnitXMLReporter.h

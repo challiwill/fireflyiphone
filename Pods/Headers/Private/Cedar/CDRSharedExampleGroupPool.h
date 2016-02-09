@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/CDRSharedExampleGroupPool.h
+../../../Cedar/Source/Headers/Public/CDRSharedExampleGroupPool.h

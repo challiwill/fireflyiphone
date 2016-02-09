@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/Reporters/CDRTeamCityReporter.h
+../../../Cedar/Source/Headers/Public/Reporters/CDRTeamCityReporter.h

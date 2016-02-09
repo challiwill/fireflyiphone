@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/Reporters/CDRColorizedReporter.h
+../../../Cedar/Source/Headers/Public/Reporters/CDRColorizedReporter.h

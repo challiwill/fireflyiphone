@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/Matchers/Stringifiers/StringifiersBase.h
+../../../Cedar/Source/Headers/Public/Matchers/Stringifiers/StringifiersBase.h

@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/iPhone/Cedar-iOS.h
+../../../Cedar/Source/Headers/Public/iOS/Cedar-iOS.h

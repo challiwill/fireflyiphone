@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/Matchers/Comparators/AnInstanceOf.h
+../../../Cedar/Source/Headers/Public/Matchers/Comparators/AnInstanceOf.h

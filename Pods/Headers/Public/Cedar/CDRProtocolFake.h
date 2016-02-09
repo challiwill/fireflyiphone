@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/Doubles/CDRProtocolFake.h
+../../../Cedar/Source/Headers/Public/Doubles/CDRProtocolFake.h

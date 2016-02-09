@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/CDRSpecHelper.h
+../../../Cedar/Source/Headers/Public/CDRSpecHelper.h

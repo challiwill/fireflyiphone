@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/CDRExampleBase.h
+../../../Cedar/Source/Headers/Public/CDRExampleBase.h

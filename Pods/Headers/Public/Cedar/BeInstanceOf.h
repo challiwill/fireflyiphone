@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/Matchers/Base/BeInstanceOf.h
+../../../Cedar/Source/Headers/Public/Matchers/Base/BeInstanceOf.h

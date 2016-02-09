@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/Matchers/Base/RaiseException.h
+../../../Cedar/Source/Headers/Public/Matchers/Base/RaiseException.h

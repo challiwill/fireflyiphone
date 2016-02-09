@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/Doubles/Arguments/AnyInstanceConformingToProtocolArgument.h
+../../../Cedar/Source/Headers/Public/Doubles/Arguments/AnyInstanceConformingToProtocolArgument.h

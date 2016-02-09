@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/Reporters/CDRDefaultReporter.h
+../../../Cedar/Source/Headers/Public/Reporters/CDRDefaultReporter.h

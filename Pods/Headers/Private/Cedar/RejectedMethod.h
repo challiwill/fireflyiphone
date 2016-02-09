@@ -1,1 +1,1 @@
-../../../Cedar/Source/Headers/Doubles/RejectedMethod.h
+../../../Cedar/Source/Headers/Public/Doubles/RejectedMethod.h
