@@ -11,6 +11,8 @@
 @property (nonatomic, readonly) CLLocationManager *locationManager;
 @property (nonatomic, readonly) LocationManagerDelegate *locationDelegate;
 
-- (instancetype)initWithBackendClient:(FireflyClient *)backendClient LocationManager:(CLLocationManager *)locationManager andMapView:(MGLMapView *)mapView;
+- (instancetype)initWithBackendClient:(FireflyClient *)backendClient
+                      LocationManager:(CLLocationManager *)locationManager
+                              MapView:(MGLMapView *)mapView;
 
 @end

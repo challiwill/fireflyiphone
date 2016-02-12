@@ -1,6 +1,6 @@
 #import "Cedar.h"
 #import "FireflyClient.h"
-#import "AFHTTPRequestOperationManager.h"
+#import "AFNetworking/AFHTTPSessionManager.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -9,21 +9,21 @@ SPEC_BEGIN(FireflyClientSpec)
 
 describe(@"FireflyClient", ^{
     __block FireflyClient *subject;
-    __block AFHTTPRequestOperationManager *manager;
+    __block AFHTTPSessionManager *manager;
     __block bool successBlockCalled;
     __block bool failureBlockCalled;
     
     
     beforeEach(^{
-        manager = nice_fake_for([AFHTTPRequestOperationManager class]);
+        manager = nice_fake_for([AFHTTPSessionManager class]);
         subject = [[FireflyClient alloc] initWithManager:manager];
     });
     
     describe(@"-signInWithUsername:Password:SuccessBlock:FailureBlock:", ^{
         __block NSString *urlString;
         __block NSDictionary *parameters;
-        __block void (^simulateSuccess)(AFHTTPRequestOperation *, id);
-        __block void (^simulateFailure)(AFHTTPRequestOperation *, NSError *);
+        __block void (^simulateSuccess)(NSURLSessionTask *, id);
+        __block void (^simulateFailure)(NSURLSessionTask *, NSError *);
         
         beforeEach(^{
             urlString = nil;
@@ -32,20 +32,20 @@ describe(@"FireflyClient", ^{
             simulateFailure = nil;
             successBlockCalled = false;
             failureBlockCalled = false;
-            manager stub_method(@selector(POST:parameters:success:failure:))
+            manager stub_method("POST:parameters:success:failure:")
             .and_do_block(^id (
-                                 NSString *incomingURLString,
-                                 NSDictionary *incomingParameters,
-                                 void (^incomingSuccessHandler)(AFHTTPRequestOperation *, id),
-                                 void (^incomingFailureHandler)(AFHTTPRequestOperation *, NSError *)
-                                 )
-            {
-                urlString = incomingURLString;
-                parameters = incomingParameters;
-                simulateSuccess = incomingSuccessHandler;
-                simulateFailure = incomingFailureHandler;
-                return 0;
-            });
+                               NSString *incomingURLString,
+                               NSDictionary *incomingParameters,
+                               void (^incomingSuccessHandler)(NSURLSessionTask *, id),
+                               void (^incomingFailureHandler)(NSURLSessionTask *, NSError *)
+                               )
+                          {
+                              urlString = incomingURLString;
+                              parameters = incomingParameters;
+                              simulateSuccess = incomingSuccessHandler;
+                              simulateFailure = incomingFailureHandler;
+                              return 0;
+                          });
             
             [subject signInWithUsername:@"testemail@berkeley.edu"
                                Password:@"password"
@@ -59,21 +59,26 @@ describe(@"FireflyClient", ^{
         
         it(@"should send a request with the correct parameterts", ^{
             parameters should equal(@{@"email": @"testemail@berkeley.edu",
-                        @"password": @"password",});
+                                      @"password": @"password",});
         });
         
         context(@"when the user/password is valid and the request succeeds", ^{
-            __block AFHTTPRequestOperation *operation;
+            __block NSURLSessionTask *operation;
             __block NSHTTPURLResponse *response;
             beforeEach(^{
-                operation = nice_fake_for([AFHTTPRequestOperation class]);
+                operation = nice_fake_for([NSURLSessionTask class]);
                 response = nice_fake_for([NSHTTPURLResponse class]);
                 
-                operation stub_method(@selector(response))
-                .and_do_block(^NSHTTPURLResponse* () {return response;});
                 
-                response stub_method(@selector(allHeaderFields))
-                .and_do_block(^NSDictionary* () {return @{@"access-token": @"new-token"};});
+                //
+                //                operation stub_method("response")
+                //                .and_do_block(^NSHTTPURLResponse* () {return response;});
+                //
+                //                response stub_method(@selector(allHeaderFields))
+                //                .and_do_block(^NSDictionary* () {return @{@"access-token": @"new-token"};});
+                
+                //                operation.response = response;
+                //                response.allHeaderFields = @{@"access-token": @"new-token"};
                 
                 simulateSuccess(operation, nil);
             });

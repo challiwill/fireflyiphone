@@ -1,17 +1,16 @@
 #import "FireflyClient.h"
-#import "AFNetworking.h"
 
 @interface FireflyClient ()
 
 @property (nonatomic) NSString *token;
 @property (nonatomic) NSString *email;
-@property (nonatomic) AFHTTPRequestOperationManager *manager;
+@property (nonatomic) AFHTTPSessionManager *manager;
 
 @end
 
 @implementation FireflyClient
 
-- (instancetype)initWithManager:(AFHTTPRequestOperationManager *)manager
+- (instancetype)initWithManager:(AFHTTPSessionManager *)manager
 {
     self = [super init];
     if (self) {
@@ -34,18 +33,21 @@
     
     [self.manager POST:@"/auth/sign_in"
             parameters:params
-               success:^(AFHTTPRequestOperation *operation, id responseObject)
+            success:^(NSURLSessionTask *operation, id responseObject)
      {
          // TODO remove log statements or update to not leak tokens
+         NSLog(@"before checking response");
+
          if (operation.response != nil) {
-             self.token = [operation.response.allHeaderFields objectForKey:@"access-token"];
+             NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+             self.token = [response.allHeaderFields objectForKey:@"access-token"];
              NSLog(@"signed in");
              NSLog(@"received TOKEN: %@", self.token);
          }
          NSLog(@"JSON: %@", responseObject);
          return successBlock();
      }
-               failure:^(AFHTTPRequestOperation *operation, NSError *error)
+               failure:^(NSURLSessionTask *operation, NSError *error)
      {
          NSLog(@"failed to sign in");
          NSLog(@"ERROR: %@", error);

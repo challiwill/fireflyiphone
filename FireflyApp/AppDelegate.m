@@ -1,7 +1,7 @@
 #import "AppDelegate.h"
 #import "SignInController.h"
 #import "FireflyClient.h"
-#import "AFHTTPRequestOperationManager.h"
+#import "AFHTTPSessionManager.h"
 
 @interface AppDelegate ()
 
@@ -15,11 +15,9 @@
     self.window = [[UIWindow alloc] initWithFrame:frame];
     
     //TODO update baseURL for prod
-    NSURL *baseURL = [[NSURL alloc] initWithString:@"https://0.0.0.0:3001"];
-    AFHTTPRequestOperationManager *manager =
-        [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseURL];
-    NSOperationQueue *queue = [NSOperationQueue mainQueue];
-    [manager setOperationQueue:queue];
+    NSURL *baseURL = [[NSURL alloc] initWithString:@"https://127.0.0.1:3001"];
+    AFHTTPSessionManager *manager =
+        [[AFHTTPSessionManager alloc] initWithBaseURL:baseURL];
     
     FireflyClient *backendClient = [[FireflyClient alloc] initWithManager:manager];
     

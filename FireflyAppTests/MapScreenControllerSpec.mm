@@ -1,5 +1,7 @@
-#import <Cedar/Cedar.h>
+#import "Cedar.h"
 #import "MapScreenController.h"
+#import "FireflyClient.h"
+#import "Mapbox/Mapbox.h"
 #import <CoreLocation/CoreLocation.h>
 
 using namespace Cedar::Matchers;
@@ -17,8 +19,10 @@ describe(@"MapScreenController", ^{
         backendClient = nice_fake_for([FireflyClient class]);
         locationManager = nice_fake_for([CLLocationManager class]);
         mapView = nice_fake_for([MGLMapView class]);
-        
-        subject = [[MapScreenController alloc] initWithBackendClient:backendClient LocationManager:locationManager andMapView:mapView];
+
+        subject = [[MapScreenController alloc] initWithBackendClient:backendClient
+                                                     LocationManager:locationManager
+                                                             MapView:mapView];
     });
     
     describe(@"-loadView", ^{

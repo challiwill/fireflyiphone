@@ -13,7 +13,9 @@ CLLocation *BERKELEY;
 
 @implementation MapScreenController
 
-- (instancetype)initWithBackendClient:(FireflyClient *)backendClient LocationManager:(CLLocationManager *) locationManager andMapView:(MGLMapView *)mapView
+- (instancetype)initWithBackendClient:(FireflyClient *)backendClient
+                      LocationManager:(CLLocationManager *) locationManager
+                              MapView:(MGLMapView *)mapView
 {
     self = [super init];
     if (self) {
@@ -28,8 +30,10 @@ CLLocation *BERKELEY;
 - (void)loadView
 {
     CGRect frame = [[UIScreen mainScreen] bounds];
+
     self.view = [[UIView alloc] initWithFrame:frame];
     [self.view addSubview:self.mapView];
+
 }
 
 - (void)viewDidLoad

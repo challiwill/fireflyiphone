@@ -5,7 +5,7 @@
 
 using namespace Cedar::Matchers;
 
-SPEC_BEGIN(AppDelegateSpecSpec)
+SPEC_BEGIN(AppDelegateSpec)
 
 describe(@"AppDelegate", ^{
     __block AppDelegate *subject;

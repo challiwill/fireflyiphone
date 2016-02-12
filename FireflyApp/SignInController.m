@@ -75,7 +75,7 @@
     MapScreenController *mapScreenController = [[MapScreenController alloc]
                                                 initWithBackendClient:self.backendClient
                                                 LocationManager:locationManager
-                                                andMapView:mapView];
+                                                MapView:mapView];
     StandardSegue *segue = [[StandardSegue alloc]
                                 initWithIdentifier:@"signInToMapScreen"
                                             source:self
