@@ -48,9 +48,7 @@ CLLocation *BERKELEY;
     self.locationDelegate =[[LocationManagerDelegate alloc] initWithMapView:self.mapView];
     self.locationManager.delegate = self.locationDelegate;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [self.mapView setCenterCoordinate:BERKELEY.coordinate
-                            zoomLevel:15
-                             animated:NO];
+    self.mapView.showsUserLocation = YES;
     
     CLAuthorizationStatus authStatus = CLLocationManager.authorizationStatus;
     if (authStatus == kCLAuthorizationStatusAuthorizedAlways) {
