@@ -3,7 +3,12 @@
 @interface FireflyClient ()
 
 @property (nonatomic) NSString *token;
+@property (nonatomic) NSString *client;
+@property (nonatomic) NSString *expiry;
+@property (nonatomic) NSString *uid;
+
 @property (nonatomic) NSString *email;
+@property (nonatomic) NSString *userID;
 @property (nonatomic) AFHTTPSessionManager *manager;
 
 @end
@@ -33,18 +38,24 @@
     
     [self.manager POST:@"/auth/sign_in"
             parameters:params
-            success:^(NSURLSessionTask *operation, id responseObject)
+               success:^(NSURLSessionTask *operation, id responseObject)
      {
-         // TODO remove log statements or update to not leak tokens
-         NSLog(@"before checking response");
-
          if (operation.response != nil) {
              NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
              self.token = [response.allHeaderFields objectForKey:@"access-token"];
+             self.client = [response.allHeaderFields objectForKey:@"client"];
+             self.expiry = [response.allHeaderFields objectForKey:@"expiry"];
+             self.uid = [response.allHeaderFields objectForKey:@"uid"];
+
              NSLog(@"signed in");
-             NSLog(@"received TOKEN: %@", self.token);
          }
-         NSLog(@"JSON: %@", responseObject);
+         if([responseObject isKindOfClass:[NSDictionary class]])
+         {
+             NSDictionary *results = responseObject;
+             self.userID = [[results objectForKey:@"data"] objectForKey:@"id"];
+         } else {
+             // TODO not sure
+         }
          return successBlock();
      }
                failure:^(NSURLSessionTask *operation, NSError *error)
@@ -53,6 +64,42 @@
          NSLog(@"ERROR: %@", error);
          return failureBlock();
      }];
+}
+
+- (void)updateLocation:(CLLocation *)newLocation
+          SuccessBlock:(void (^)())successBlock
+          FailureBlock:(void (^)())failureBlock;
+{
+    [self prepareHeader];
+    
+    NSString *patchPath = [NSString stringWithFormat: @"/users/%@", self.userID];
+    NSNumber *latitude = @(newLocation.coordinate.latitude);
+    NSNumber *longitude = @(newLocation.coordinate.longitude);
+    NSDictionary *params = @{@"user": @{@"latitude":latitude, @"longitude":longitude}};
+    
+    [self.manager PATCH:patchPath
+             parameters:params
+                success:nil
+                failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         NSLog(@"failed to update location");
+         NSLog(@"ERROR: %@", error);
+         return failureBlock();
+     }];
+}
+
+- (void)prepareHeader
+{
+    [self.manager.requestSerializer setValue:self.token forHTTPHeaderField:@"access-token"];
+    [self.manager.requestSerializer setValue:@"Bearer" forHTTPHeaderField:@"token-type"];
+    [self.manager.requestSerializer setValue:self.client forHTTPHeaderField:@"client"];
+    [self.manager.requestSerializer setValue:self.expiry forHTTPHeaderField:@"expiry"];
+    [self.manager.requestSerializer setValue:self.uid forHTTPHeaderField:@"uid"];
+}
+
+- (void)reportLocationUpdateError
+{
+    //TODO implement error alert
 }
 
 @end

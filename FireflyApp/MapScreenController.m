@@ -45,7 +45,8 @@ CLLocation *BERKELEY;
                             zoomLevel:15
                              animated:NO];
     
-    self.locationDelegate =[[LocationManagerDelegate alloc] initWithMapView:self.mapView];
+    self.locationDelegate =[[LocationManagerDelegate alloc] initWithMapView:self.mapView
+                            BackendClient:self.backendClient];
     self.locationManager.delegate = self.locationDelegate;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     self.mapView.showsUserLocation = YES;

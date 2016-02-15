@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "AFNetworking/AFHTTPSessionManager.h"
+#import "LocationManagerDelegate.h"
 
 @interface FireflyClient : NSObject
 
@@ -11,4 +12,9 @@
                   Password:(NSString *)password
               SuccessBlock:(void (^)())successBlock
               FailureBlock:(void (^)())failureBlock;
+- (void)updateLocation:(CLLocation *)newlocation
+          SuccessBlock:(void (^)())successBlock
+          FailureBlock:(void (^)())failureBlock;;
+- (void)reportLocationUpdateError;
+
 @end
