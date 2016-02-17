@@ -1,18 +1,18 @@
-#import "SignInController.h"
+#import "SignUpController.h"
 
-@interface SignInController ()
+@interface SignUpController ()
 
 @property (nonatomic) FireflyClient *backendClient;
 @property (nonatomic) UITextField *emailField;
 @property (nonatomic) UITextField *passwordField;
-@property (nonatomic) UIButton *signInButton;
+// TODO add profile picture
 @property (nonatomic) UIButton *signUpButton;
+@property (nonatomic) UIButton *cancelButton;
 
 
 @end
 
-@implementation SignInController
-
+@implementation SignUpController
 
 - (instancetype)initWithBackendClient:(FireflyClient *)backendClient
 {
@@ -23,58 +23,62 @@
     return self;
 }
 
-
-#pragma mark - UIViewController
-
 - (void)loadView
 {
     [super loadView];
-
+    
     // TODO determine frames sizing and positioning
     self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 800)];
     self.emailField = [[UITextField alloc] initWithFrame:CGRectMake(35, 400, 300, 50)];
     self.passwordField = [[UITextField alloc] initWithFrame:CGRectMake(35, 465, 300, 50)];
-    self.signInButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.signUpButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-
+    self.cancelButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    
     [self.view addSubview:self.emailField];
     [self.view addSubview:self.passwordField];
-    [self.view addSubview:self.signInButton];
     [self.view addSubview:self.signUpButton];
-
+    [self.view addSubview:self.cancelButton];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     self.view.backgroundColor = [UIColor darkGrayColor];
-
+    
     self.emailField.borderStyle = UITextBorderStyleRoundedRect;
     self.passwordField.borderStyle = UITextBorderStyleRoundedRect;
-
+    
+    [self.cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
+    [self.cancelButton addTarget:self action:@selector(cancel) forControlEvents:UIControlEventTouchUpInside];
+    self.cancelButton.frame = CGRectMake(80, 520, 75, 50);
+    
     self.emailField.placeholder = @"email";
     self.passwordField.placeholder = @"password";
     self.passwordField.secureTextEntry = YES;
-    [self.signInButton setTitle:@"Sign In" forState:UIControlStateNormal];
-    [self.signInButton addTarget:self action:@selector(signIn) forControlEvents:UIControlEventTouchUpInside];
-    self.signInButton.frame = CGRectMake(140, 520, 75, 50);
     
     [self.signUpButton setTitle:@"Sign Up" forState:UIControlStateNormal];
     [self.signUpButton addTarget:self action:@selector(signUp) forControlEvents:UIControlEventTouchUpInside];
-    self.signUpButton.frame = CGRectMake(80, 520, 75, 50);
-
+    self.signUpButton.frame = CGRectMake(140, 520, 75, 50);
 }
 
-- (void)signIn
+- (void)cancel
 {
-    self.emailField.text = @"testemail@berkeley.edu";
-    self.passwordField.text = @"password";
-    // TODO some level of checks on user/password here (at least not empty)?
-    [self.backendClient signInWithUsername:self.emailField.text
+    SignInController *signInController = [[SignInController alloc]                                                initWithBackendClient:self.backendClient];
+    StandardSegue *segue = [[StandardSegue alloc]
+                            initWithIdentifier:@"signUpToSignIn"
+                            source:self
+                            destination:signInController];
+    [self prepareForSegue:segue sender:self];
+    [segue perform];
+}
+
+- (void)signUp
+{
+    [self.backendClient signUpWithUsername:self.emailField.text
                                   Password:self.passwordField.text
                               SuccessBlock:^void () {[self segueToMapScreen];}
-                              FailureBlock:^void () {NSLog(@"Login failed");}];
+                              FailureBlock:^void () {NSLog(@"Sign Up failed");}];
 }
 
 - (void)segueToMapScreen
@@ -86,26 +90,11 @@
                                                 LocationManager:locationManager
                                                 MapView:mapView];
     StandardSegue *segue = [[StandardSegue alloc]
-                                initWithIdentifier:@"signInToMapScreen"
-                                            source:self
-                                       destination:mapScreenController];
-    [self prepareForSegue:segue sender:self];
-    [segue perform];
-}
-
-- (void)signUp
-{
-    [self segueToSignUpScreen];
-}
-
-- (void)segueToSignUpScreen
-{
-    SignUpController *signUpController = [[SignUpController alloc]                                                initWithBackendClient:self.backendClient];
-    StandardSegue *segue = [[StandardSegue alloc]
-                            initWithIdentifier:@"signInToSignUp"
+                            initWithIdentifier:@"signInToMapScreen"
                             source:self
-                            destination:signUpController];
+                            destination:mapScreenController];
     [self prepareForSegue:segue sender:self];
     [segue perform];
 }
+
 @end

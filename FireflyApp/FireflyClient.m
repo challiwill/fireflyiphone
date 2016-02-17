@@ -29,6 +29,45 @@
     return self;
 }
 
+- (void)signUpWithUsername:(NSString *)username
+                  Password:(NSString *)password
+              SuccessBlock:(void (^)())successBlock
+              FailureBlock:(void (^)())failureBlock
+{
+    NSDictionary *params = @{@"email": username, @"password": password};
+    
+    [self.manager POST:@"/auth"
+            parameters:params
+               success:^(NSURLSessionTask *operation, id responseObject)
+     {
+         if (operation.response != nil) {
+             NSHTTPURLResponse *response = (NSHTTPURLResponse *)operation.response;
+             self.token = [response.allHeaderFields objectForKey:@"access-token"];
+             self.client = [response.allHeaderFields objectForKey:@"client"];
+             self.expiry = [response.allHeaderFields objectForKey:@"expiry"];
+             self.uid = [response.allHeaderFields objectForKey:@"uid"];
+             
+             NSLog(@"signed up");
+         }
+         if([responseObject isKindOfClass:[NSDictionary class]])
+         {
+             NSDictionary *results = responseObject;
+             self.userID = [[results objectForKey:@"data"] objectForKey:@"id"];
+         } else {
+             // TODO not sure
+         }
+         return successBlock();
+     }
+               failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         //TODO give more useful error on sign up failure
+         NSLog(@"failed to sign up");
+         NSLog(@"ERROR: %@", error);
+         return failureBlock();
+     }];
+
+}
+
 - (void)signInWithUsername:(NSString *)username
                   Password:(NSString *)password
               SuccessBlock:(void (^)())successBlock
