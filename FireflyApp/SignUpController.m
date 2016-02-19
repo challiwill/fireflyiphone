@@ -1,4 +1,5 @@
 #import "SignUpController.h"
+#import "CommunityListController.h"
 
 @interface SignUpController ()
 
@@ -24,9 +25,7 @@
 }
 
 - (void)loadView
-{
-    [super loadView];
-    
+{    
     // TODO determine frames sizing and positioning
     self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 800)];
     self.emailField = [[UITextField alloc] initWithFrame:CGRectMake(35, 400, 300, 50)];
@@ -77,22 +76,18 @@
 {
     [self.backendClient signUpWithUsername:self.emailField.text
                                   Password:self.passwordField.text
-                              SuccessBlock:^void () {[self segueToMapScreen];}
+                              SuccessBlock:^void () {[self segueToCommunityListController];}
                               FailureBlock:^void () {NSLog(@"Sign Up failed");}];
 }
 
-- (void)segueToMapScreen
+- (void)segueToCommunityListController
 {
-    MGLMapView *mapView = [[MGLMapView alloc] initWithFrame:self.view.bounds];
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-    MapScreenController *mapScreenController = [[MapScreenController alloc]
-                                                initWithBackendClient:self.backendClient
-                                                LocationManager:locationManager
-                                                MapView:mapView];
+    CommunityListController *communityListController = [[CommunityListController alloc] initWithBackendClient:self.backendClient];
+
     StandardSegue *segue = [[StandardSegue alloc]
-                            initWithIdentifier:@"signInToMapScreen"
+                            initWithIdentifier:@"signUpToCommunityListController"
                             source:self
-                            destination:mapScreenController];
+                            destination:communityListController];
     [self prepareForSegue:segue sender:self];
     [segue perform];
 }

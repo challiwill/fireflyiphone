@@ -8,7 +8,6 @@
 @property (nonatomic) UIButton *signInButton;
 @property (nonatomic) UIButton *signUpButton;
 
-
 @end
 
 @implementation SignInController
@@ -28,8 +27,6 @@
 
 - (void)loadView
 {
-    [super loadView];
-
     // TODO determine frames sizing and positioning
     self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 800)];
     self.emailField = [[UITextField alloc] initWithFrame:CGRectMake(35, 400, 300, 50)];

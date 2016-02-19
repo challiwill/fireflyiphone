@@ -24,6 +24,8 @@
 		9DA2472E1BA5F2E400088013 /* FireflyClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2472D1BA5F2E400088013 /* FireflyClient.m */; };
 		9DA531C51C2C542C008BECCA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9DA531C41C2C542C008BECCA /* Settings.bundle */; };
 		9DA9DE771C72A9F70089151A /* SignUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA9DE761C72A9F70089151A /* SignUpController.m */; };
+		9DCC9DE81C76DDFA00889265 /* CommunityListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC9DE71C76DDFA00889265 /* CommunityListController.m */; };
+		9DCC9DEE1C76E15400889265 /* CommunityListDataSourceDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC9DED1C76E15400889265 /* CommunityListDataSourceDelegate.m */; };
 		9DDE31201C13CA1900245408 /* MapScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE311F1C13CA1900245408 /* MapScreenController.m */; };
 		9DDE31261C15EC1200245408 /* StandardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE31251C15EC1200245408 /* StandardSegue.m */; };
 		9DDE312B1C21C4E600245408 /* MapScreenControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE312A1C21C4E600245408 /* MapScreenControllerSpec.mm */; };
@@ -69,6 +71,10 @@
 		9DA531C41C2C542C008BECCA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9DA9DE751C72A9F70089151A /* SignUpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpController.h; sourceTree = "<group>"; };
 		9DA9DE761C72A9F70089151A /* SignUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpController.m; sourceTree = "<group>"; };
+		9DCC9DE61C76DDFA00889265 /* CommunityListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityListController.h; sourceTree = "<group>"; };
+		9DCC9DE71C76DDFA00889265 /* CommunityListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityListController.m; sourceTree = "<group>"; };
+		9DCC9DEC1C76E15400889265 /* CommunityListDataSourceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommunityListDataSourceDelegate.h; path = ../CommunityListDataSourceDelegate.h; sourceTree = "<group>"; };
+		9DCC9DED1C76E15400889265 /* CommunityListDataSourceDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommunityListDataSourceDelegate.m; path = ../CommunityListDataSourceDelegate.m; sourceTree = "<group>"; };
 		9DDE311E1C13CA1900245408 /* MapScreenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapScreenController.h; sourceTree = "<group>"; };
 		9DDE311F1C13CA1900245408 /* MapScreenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapScreenController.m; sourceTree = "<group>"; };
 		9DDE31241C15EC1200245408 /* StandardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardSegue.h; sourceTree = "<group>"; };
@@ -153,10 +159,10 @@
 				9DA9DE761C72A9F70089151A /* SignUpController.m */,
 				9DA2470B1BA5EDE600088013 /* SignInController.h */,
 				9DA2470C1BA5EDE600088013 /* SignInController.m */,
+				9DCC9DE61C76DDFA00889265 /* CommunityListController.h */,
+				9DCC9DE71C76DDFA00889265 /* CommunityListController.m */,
 				9DDE311E1C13CA1900245408 /* MapScreenController.h */,
 				9DDE311F1C13CA1900245408 /* MapScreenController.m */,
-				9D9866091C494B3D00B17E05 /* LocationManagerDelegate.h */,
-				9D98660A1C494B3D00B17E05 /* LocationManagerDelegate.m */,
 				9DA247111BA5EDE600088013 /* Images.xcassets */,
 				9DA247131BA5EDE600088013 /* LaunchScreen.xib */,
 				9DA247041BA5EDE600088013 /* Supporting Files */,
@@ -164,6 +170,10 @@
 				9DA2472D1BA5F2E400088013 /* FireflyClient.m */,
 				9DDE31241C15EC1200245408 /* StandardSegue.h */,
 				9DDE31251C15EC1200245408 /* StandardSegue.m */,
+				9DCC9DEC1C76E15400889265 /* CommunityListDataSourceDelegate.h */,
+				9DCC9DED1C76E15400889265 /* CommunityListDataSourceDelegate.m */,
+				9D9866091C494B3D00B17E05 /* LocationManagerDelegate.h */,
+				9D98660A1C494B3D00B17E05 /* LocationManagerDelegate.m */,
 			);
 			path = FireflyApp;
 			sourceTree = "<group>";
@@ -405,11 +415,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DDE31261C15EC1200245408 /* StandardSegue.m in Sources */,
+				9DCC9DE81C76DDFA00889265 /* CommunityListController.m in Sources */,
 				9DA2470D1BA5EDE600088013 /* SignInController.m in Sources */,
 				9DA2470A1BA5EDE600088013 /* AppDelegate.m in Sources */,
 				9DA2472E1BA5F2E400088013 /* FireflyClient.m in Sources */,
 				9DA247071BA5EDE600088013 /* main.m in Sources */,
 				9D98660B1C494B3D00B17E05 /* LocationManagerDelegate.m in Sources */,
+				9DCC9DEE1C76E15400889265 /* CommunityListDataSourceDelegate.m in Sources */,
 				9DDE31201C13CA1900245408 /* MapScreenController.m in Sources */,
 				9DA9DE771C72A9F70089151A /* SignUpController.m in Sources */,
 			);

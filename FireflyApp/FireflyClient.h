@@ -18,7 +18,9 @@
               FailureBlock:(void (^)())failureBlock;
 - (void)updateLocation:(CLLocation *)newlocation
           SuccessBlock:(void (^)())successBlock
-          FailureBlock:(void (^)())failureBlock;;
+          FailureBlock:(void (^)())failureBlock;
+- (void)fetchCommunitiesWithSuccessBlock:(void (^)(NSArray *))successBlock
+                            FailureBlock:(void (^)())failureBlock;
 - (void)reportLocationUpdateError;
 
 @end

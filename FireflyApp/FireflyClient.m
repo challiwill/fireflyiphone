@@ -65,7 +65,7 @@
          NSLog(@"ERROR: %@", error);
          return failureBlock();
      }];
-
+    
 }
 
 - (void)signInWithUsername:(NSString *)username
@@ -85,7 +85,7 @@
              self.client = [response.allHeaderFields objectForKey:@"client"];
              self.expiry = [response.allHeaderFields objectForKey:@"expiry"];
              self.uid = [response.allHeaderFields objectForKey:@"uid"];
-
+             
              NSLog(@"signed in");
          }
          if([responseObject isKindOfClass:[NSDictionary class]])
@@ -125,6 +125,32 @@
          NSLog(@"ERROR: %@", error);
          return failureBlock();
      }];
+}
+
+- (void)fetchCommunitiesWithSuccessBlock:(void (^)(NSArray *))successBlock
+                            FailureBlock:(void (^)())failureBlock
+{
+    [self prepareHeader];
+    
+    NSString *groupsPath = [NSString stringWithFormat: @"/users/%@/groups", self.userID];
+    // TODO add logging
+    [self.manager GET:groupsPath
+           parameters:nil
+             progress:nil
+              success:^(NSURLSessionTask *operation, id responseObject)
+     {
+         NSArray *groups;
+         if([responseObject isKindOfClass:[NSDictionary class]])
+         {
+             NSDictionary *results = responseObject;
+             groups = [results objectForKey:@"groups"];
+         } else {
+             // TODO not sure
+         }
+         return successBlock(groups);
+     }
+              failure:^(NSURLSessionTask *operation, NSError *error){return failureBlock();}
+     ];
 }
 
 - (void)prepareHeader
