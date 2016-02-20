@@ -38,6 +38,7 @@
     
     [self.manager POST:@"/auth"
             parameters:params
+              progress:nil
                success:^(NSURLSessionTask *operation, id responseObject)
      {
          if (operation.response != nil) {
@@ -77,6 +78,7 @@
     
     [self.manager POST:@"/auth/sign_in"
             parameters:params
+              progress:nil
                success:^(NSURLSessionTask *operation, id responseObject)
      {
          if (operation.response != nil) {
