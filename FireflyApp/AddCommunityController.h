@@ -1,10 +1,8 @@
 #import <UIKit/UIKit.h>
 #import "FireflyClient.h"
-#import "CommunityListDataSourceDelegate.h"
-#import "StandardSegue.h"
-#import "AddCommunityController.h"
+#import "CommunityListController.h"
 
-@interface CommunityListController : UIViewController
+@interface AddCommunityController : UIViewController
 
 @property (nonatomic, readonly) FireflyClient *backendClient;
 

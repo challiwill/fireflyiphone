@@ -5,6 +5,7 @@
 @property (nonatomic) FireflyClient *backendClient;
 @property (nonatomic) UITableView *tableView;
 @property (nonatomic) CommunityListDataSourceDelegate *tableViewDataSourceDelegate;
+@property (nonatomic) UIButton *addCommunityButton;
 
 @end
 
@@ -21,10 +22,12 @@
 
 - (void)loadView
 {
-    self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 800)];
+    self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 800)];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 300, 800)];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 50, 400, 800)];
+    self.addCommunityButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
     [self.view addSubview:self.tableView];
+    [self.view addSubview:self.addCommunityButton];
     
 }
 
@@ -33,6 +36,9 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor darkGrayColor];
+    
+    self.addCommunityButton.center = CGPointMake(350, 75);
+    [self.addCommunityButton addTarget:self action:@selector(segueToAddCommunity) forControlEvents:UIControlEventTouchUpInside];
     
     self.tableViewDataSourceDelegate = [[CommunityListDataSourceDelegate alloc] init];
     self.tableView.dataSource = self.tableViewDataSourceDelegate;
@@ -48,6 +54,17 @@
      {
          NSLog(@"failed to get communities");
      }];
+}
+
+- (void)segueToAddCommunity
+{
+    AddCommunityController *addCommunityController = [[AddCommunityController alloc]                                                initWithBackendClient:self.backendClient];
+    StandardSegue *segue = [[StandardSegue alloc]
+                            initWithIdentifier:@"communityListToAddCommunity"
+                            source:self
+                            destination:addCommunityController];
+    [self prepareForSegue:segue sender:self];
+    [segue perform];
 }
 
 @end

@@ -153,6 +153,22 @@
      ];
 }
 
+- (void) createCommunityWithName:(NSString *)name
+                    PrivacyLevel:(NSNumber *)privacyLevel
+                    SuccessBlock:(void (^)())successBlock
+                    FailureBlock:(void (^)())failureBlock
+{
+    [self prepareHeader];
+    NSDictionary *params = @{@"user_id":self.userID, @"name":name, @"privacy_level":privacyLevel};
+    
+    [self.manager POST:@"/groups"
+            parameters:params
+              progress:nil
+               success:^(NSURLSessionTask *operation, id responseObject){return successBlock();}
+               failure:^(NSURLSessionTask *operation, NSError *error){return failureBlock();}
+     ];
+}
+
 - (void)prepareHeader
 {
     [self.manager.requestSerializer setValue:self.token forHTTPHeaderField:@"access-token"];

@@ -12,6 +12,7 @@
 		9D19A3E91BB11EC5000D3C07 /* FireflyClientSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D19A3E81BB11EC5000D3C07 /* FireflyClientSpec.mm */; };
 		9D1FD19E1BB27B0900577EB7 /* SignInControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FD19D1BB27B0900577EB7 /* SignInControllerSpec.mm */; };
 		9D698B9C1BE1F211004014A1 /* server.cer in Resources */ = {isa = PBXBuildFile; fileRef = 9D698B9B1BE1F211004014A1 /* server.cer */; };
+		9D7F421B1C77030700B744E6 /* AddCommunityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F421A1C77030700B744E6 /* AddCommunityController.m */; };
 		9D81997A1C49517F006EE164 /* LocationManagerDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D8199791C49517F006EE164 /* LocationManagerDelegateSpec.mm */; };
 		9D81997C1C4E91F9006EE164 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D81997B1C4E91F9006EE164 /* CoreLocation.framework */; };
 		9D81997F1C4E9426006EE164 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D81997B1C4E91F9006EE164 /* CoreLocation.framework */; };
@@ -50,6 +51,8 @@
 		9D19A3E81BB11EC5000D3C07 /* FireflyClientSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FireflyClientSpec.mm; sourceTree = "<group>"; };
 		9D1FD19D1BB27B0900577EB7 /* SignInControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SignInControllerSpec.mm; sourceTree = "<group>"; };
 		9D698B9B1BE1F211004014A1 /* server.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = server.cer; sourceTree = "<group>"; };
+		9D7F42191C77030700B744E6 /* AddCommunityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCommunityController.h; sourceTree = "<group>"; };
+		9D7F421A1C77030700B744E6 /* AddCommunityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCommunityController.m; sourceTree = "<group>"; };
 		9D8199791C49517F006EE164 /* LocationManagerDelegateSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LocationManagerDelegateSpec.mm; sourceTree = "<group>"; };
 		9D81997B1C4E91F9006EE164 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9D81997D1C4E92EA006EE164 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -161,6 +164,8 @@
 				9DA2470C1BA5EDE600088013 /* SignInController.m */,
 				9DCC9DE61C76DDFA00889265 /* CommunityListController.h */,
 				9DCC9DE71C76DDFA00889265 /* CommunityListController.m */,
+				9D7F42191C77030700B744E6 /* AddCommunityController.h */,
+				9D7F421A1C77030700B744E6 /* AddCommunityController.m */,
 				9DDE311E1C13CA1900245408 /* MapScreenController.h */,
 				9DDE311F1C13CA1900245408 /* MapScreenController.m */,
 				9DA247111BA5EDE600088013 /* Images.xcassets */,
@@ -424,6 +429,7 @@
 				9DCC9DEE1C76E15400889265 /* CommunityListDataSourceDelegate.m in Sources */,
 				9DDE31201C13CA1900245408 /* MapScreenController.m in Sources */,
 				9DA9DE771C72A9F70089151A /* SignUpController.m in Sources */,
+				9D7F421B1C77030700B744E6 /* AddCommunityController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

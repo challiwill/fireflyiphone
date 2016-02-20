@@ -21,6 +21,10 @@
           FailureBlock:(void (^)())failureBlock;
 - (void)fetchCommunitiesWithSuccessBlock:(void (^)(NSArray *))successBlock
                             FailureBlock:(void (^)())failureBlock;
+- (void) createCommunityWithName:(NSString *)name
+                    PrivacyLevel:(NSNumber *)privacyLevel
+                    SuccessBlock:(void (^)())successBlock
+                    FailureBlock:(void (^)())failureBlock;
 - (void)reportLocationUpdateError;
 
 @end

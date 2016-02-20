@@ -27,7 +27,7 @@
 - (void)loadView
 {    
     // TODO determine frames sizing and positioning
-    self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 800)];
+    self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 800)];
     self.emailField = [[UITextField alloc] initWithFrame:CGRectMake(35, 400, 300, 50)];
     self.passwordField = [[UITextField alloc] initWithFrame:CGRectMake(35, 465, 300, 50)];
     self.signUpButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -85,7 +85,7 @@
     CommunityListController *communityListController = [[CommunityListController alloc] initWithBackendClient:self.backendClient];
 
     StandardSegue *segue = [[StandardSegue alloc]
-                            initWithIdentifier:@"signUpToCommunityListController"
+                            initWithIdentifier:@"signUpToCommunityList"
                             source:self
                             destination:communityListController];
     [self prepareForSegue:segue sender:self];
