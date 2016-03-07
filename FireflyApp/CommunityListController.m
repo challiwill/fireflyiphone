@@ -38,11 +38,13 @@
     self.view.backgroundColor = [UIColor darkGrayColor];
     
     self.addCommunityButton.center = CGPointMake(350, 75);
-    [self.addCommunityButton addTarget:self action:@selector(segueToAddCommunity) forControlEvents:UIControlEventTouchUpInside];
+    [self.addCommunityButton addTarget:self action:@selector(segueToAddCommunity)
+                      forControlEvents:UIControlEventTouchUpInside];
     
     self.tableViewDataSourceDelegate = [[CommunityListDataSourceDelegate alloc] init];
     self.tableView.dataSource = self.tableViewDataSourceDelegate;
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:communityCellIdentifier];
+    [self.tableView registerClass:[UITableViewCell class]
+           forCellReuseIdentifier:communityCellIdentifier];
     
     [self.backendClient fetchCommunitiesWithSuccessBlock:^void (NSArray *communities)
      {
@@ -58,7 +60,8 @@
 
 - (void)segueToAddCommunity
 {
-    AddCommunityController *addCommunityController = [[AddCommunityController alloc]                                                initWithBackendClient:self.backendClient];
+    AddCommunityController *addCommunityController = [[AddCommunityController alloc]
+                                                      initWithBackendClient:self.backendClient];
     StandardSegue *segue = [[StandardSegue alloc]
                             initWithIdentifier:@"communityListToAddCommunity"
                             source:self

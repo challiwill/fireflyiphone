@@ -1,9 +1,9 @@
 #import <UIKit/UIKit.h>
 #import "FireflyClient.h"
 #import "SignUpController.h"
-#import "MapScreenController.h"
 #import "StandardSegue.h"
 #import "Mapbox/Mapbox.h"
+#import "PeerListController.h"
 
 @class FireflyClient;
 
@@ -16,7 +16,7 @@
 
 - (instancetype)initWithBackendClient:(FireflyClient *)backendClient;
 - (void)signIn;
-- (void)segueToMapScreen;
+- (void)segueToPeerList;
 
 @end
 

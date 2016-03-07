@@ -19,6 +19,22 @@ describe(@"FireflyClient", ^{
         subject = [[FireflyClient alloc] initWithManager:manager];
     });
     
+    describe(@"-signUpWithUsername:Password:SuccessBlock:FailureBlock:", ^{
+        
+    });
+    
+    describe(@"-updateLocation:SucessBlock:FailureBlock:", ^{
+        
+    });
+    
+    describe(@"-fetchCommunitiesWithSuccessBlock:FailureBlock", ^{
+        
+    });
+    
+    describe(@"createCommunityWithName:PrivacyLevel:SuccessBlockFailureBlock:", ^{
+        
+    });
+    
     describe(@"-signInWithUsername:Password:SuccessBlock:FailureBlock:", ^{
         __block NSString *urlString;
         __block NSDictionary *parameters;

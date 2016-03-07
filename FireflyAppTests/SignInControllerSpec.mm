@@ -2,7 +2,6 @@
 #import "SignInController.h"
 #import "FireflyClient.h"
 #import "AppDelegate.h"
-#import "MapScreenController.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -55,13 +54,17 @@ describe(@"SignInController", ^{
     //   with the right arguments
     // cannot test with view controllers because it's not actually in the
     //   context
-    describe(@"-segueToMapScreen", ^{
+    describe(@"-segueToPeerList", ^{
         subjectAction(^{
-            [subject segueToMapScreen];
+            [subject segueToPeerList];
         });
         
         it(@"should segue to the map view controller", ^{
         });
+    });
+    
+    describe(@"segueToSignUpScreen", ^{
+        
     });
 });
 

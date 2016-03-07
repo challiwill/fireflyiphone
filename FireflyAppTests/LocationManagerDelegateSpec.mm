@@ -11,7 +11,18 @@ describe(@"LocationManagerDelegate", ^{
 
     beforeEach(^{
         subject = [[LocationManagerDelegate alloc] init];
-
+    });
+    
+    describe(@"initWithMapView:BackendClient:", ^{
+        
+    });
+    
+    describe(@"locationManager:didChangeAuthorizationStatus:", ^{
+        
+    });
+    
+    describe(@"locationManager:didUpdateLocations:", ^{
+        
     });
 });
 

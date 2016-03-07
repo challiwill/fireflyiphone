@@ -70,22 +70,20 @@
     // TODO some level of checks on user/password here (at least not empty)?
     [self.backendClient signInWithUsername:self.emailField.text
                                   Password:self.passwordField.text
-                              SuccessBlock:^void () {[self segueToMapScreen];}
+                              SuccessBlock:^void () {[self segueToPeerList];}
                               FailureBlock:^void () {NSLog(@"Login failed");}];
 }
 
-- (void)segueToMapScreen
+- (void)segueToPeerList
 {
-    MGLMapView *mapView = [[MGLMapView alloc] initWithFrame:self.view.bounds];
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-    MapScreenController *mapScreenController = [[MapScreenController alloc]
+    PeerListController *peerListController = [[PeerListController alloc]
                                                 initWithBackendClient:self.backendClient
-                                                LocationManager:locationManager
-                                                MapView:mapView];
+                                                LocationManager:locationManager];
     StandardSegue *segue = [[StandardSegue alloc]
-                                initWithIdentifier:@"signInToMapScreen"
+                                initWithIdentifier:@"signInToPeerList"
                                             source:self
-                                       destination:mapScreenController];
+                                       destination:peerListController];
     [self prepareForSegue:segue sender:self];
     [segue perform];
 }
