@@ -17,9 +17,11 @@ describe(@"AppDelegate", ^{
     describe(@"as a <UIApplicationDelegate>", ^{
         describe(@"-application:didFinishLaunchingWithOptions:", ^{
             __block BOOL returnValue;
+            __block UIApplication *app;
             
             subjectAction(^{
-                returnValue = [subject application:nil didFinishLaunchingWithOptions:nil];
+                app = nice_fake_for([UIApplication class]);
+                returnValue = [subject application:app didFinishLaunchingWithOptions:nil];
             });
             
             it(@"should return YES", ^{
