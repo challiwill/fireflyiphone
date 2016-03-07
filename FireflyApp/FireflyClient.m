@@ -29,6 +29,7 @@
     return self;
 }
 
+// USER
 - (void)signUpWithUsername:(NSString *)username
                   Password:(NSString *)password
               SuccessBlock:(void (^)())successBlock
@@ -107,6 +108,7 @@
      }];
 }
 
+// LOCATION
 - (void)updateLocation:(CLLocation *)newLocation
           SuccessBlock:(void (^)())successBlock
           FailureBlock:(void (^)())failureBlock;
@@ -129,6 +131,7 @@
      }];
 }
 
+// COMMUNITIES
 - (void)fetchCommunitiesWithSuccessBlock:(void (^)(NSArray *))successBlock
                             FailureBlock:(void (^)())failureBlock
 {
@@ -171,6 +174,12 @@
      ];
 }
 
+// PEERS
+- (void)fetchPeersWithSuccessBlock:(void (^)(NSArray *))successBlock
+                            FailureBlock:(void (^)())failureBlock
+{
+}
+
 - (void)prepareHeader
 {
     [self.manager.requestSerializer setValue:self.token forHTTPHeaderField:@"access-token"];
@@ -180,6 +189,8 @@
     [self.manager.requestSerializer setValue:self.uid forHTTPHeaderField:@"uid"];
 }
 
+
+// HELPERS
 - (void)reportLocationUpdateError
 {
     //TODO implement error alert

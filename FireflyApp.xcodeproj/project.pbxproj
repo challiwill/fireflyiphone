@@ -31,6 +31,8 @@
 		9DB96D191C8D2B0A00DDEF25 /* SignUpControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9DB96D181C8D2B0A00DDEF25 /* SignUpControllerSpec.mm */; };
 		9DB96D1B1C8D2B2100DDEF25 /* CommunityListControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9DB96D1A1C8D2B2100DDEF25 /* CommunityListControllerSpec.mm */; };
 		9DB96D1D1C8D2B2F00DDEF25 /* AddCommunityControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9DB96D1C1C8D2B2F00DDEF25 /* AddCommunityControllerSpec.mm */; };
+		9DB96D211C8D313E00DDEF25 /* Peer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB96D201C8D313E00DDEF25 /* Peer.m */; };
+		9DB96D241C8D315C00DDEF25 /* PeerListDataSourceDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB96D231C8D315C00DDEF25 /* PeerListDataSourceDelegate.m */; };
 		9DCC9DE81C76DDFA00889265 /* CommunityListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC9DE71C76DDFA00889265 /* CommunityListController.m */; };
 		9DCC9DEE1C76E15400889265 /* CommunityListDataSourceDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC9DED1C76E15400889265 /* CommunityListDataSourceDelegate.m */; };
 		9DDE31261C15EC1200245408 /* StandardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE31251C15EC1200245408 /* StandardSegue.m */; };
@@ -85,6 +87,10 @@
 		9DB96D181C8D2B0A00DDEF25 /* SignUpControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SignUpControllerSpec.mm; sourceTree = "<group>"; };
 		9DB96D1A1C8D2B2100DDEF25 /* CommunityListControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CommunityListControllerSpec.mm; sourceTree = "<group>"; };
 		9DB96D1C1C8D2B2F00DDEF25 /* AddCommunityControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AddCommunityControllerSpec.mm; sourceTree = "<group>"; };
+		9DB96D1F1C8D313E00DDEF25 /* Peer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Peer.h; sourceTree = "<group>"; };
+		9DB96D201C8D313E00DDEF25 /* Peer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Peer.m; sourceTree = "<group>"; };
+		9DB96D221C8D315C00DDEF25 /* PeerListDataSourceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeerListDataSourceDelegate.h; sourceTree = "<group>"; };
+		9DB96D231C8D315C00DDEF25 /* PeerListDataSourceDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeerListDataSourceDelegate.m; sourceTree = "<group>"; };
 		9DCC9DE61C76DDFA00889265 /* CommunityListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityListController.h; sourceTree = "<group>"; };
 		9DCC9DE71C76DDFA00889265 /* CommunityListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityListController.m; sourceTree = "<group>"; };
 		9DCC9DEC1C76E15400889265 /* CommunityListDataSourceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommunityListDataSourceDelegate.h; path = ../CommunityListDataSourceDelegate.h; sourceTree = "<group>"; };
@@ -163,30 +169,14 @@
 		9DA247031BA5EDE600088013 /* FireflyApp */ = {
 			isa = PBXGroup;
 			children = (
-				9DA531C41C2C542C008BECCA /* Settings.bundle */,
-				9DA247081BA5EDE600088013 /* AppDelegate.h */,
-				9DA247091BA5EDE600088013 /* AppDelegate.m */,
-				9DA9DE751C72A9F70089151A /* SignUpController.h */,
-				9DA9DE761C72A9F70089151A /* SignUpController.m */,
-				9DA2470B1BA5EDE600088013 /* SignInController.h */,
-				9DA2470C1BA5EDE600088013 /* SignInController.m */,
-				9DCC9DE61C76DDFA00889265 /* CommunityListController.h */,
-				9DCC9DE71C76DDFA00889265 /* CommunityListController.m */,
-				9D7F42191C77030700B744E6 /* AddCommunityController.h */,
-				9D7F421A1C77030700B744E6 /* AddCommunityController.m */,
-				9D2DDF541C8D1BCB002054FC /* PeerListController.h */,
-				9D2DDF551C8D1BCB002054FC /* PeerListController.m */,
-				9DA247111BA5EDE600088013 /* Images.xcassets */,
-				9DA247131BA5EDE600088013 /* LaunchScreen.xib */,
+				9DB96D291C8D372B00DDEF25 /* App */,
+				9DB96D251C8D36BF00DDEF25 /* User */,
+				9DB96D271C8D36F900DDEF25 /* Communities */,
+				9DB96D281C8D36FF00DDEF25 /* Peers */,
 				9DA247041BA5EDE600088013 /* Supporting Files */,
-				9DA2472C1BA5F2E400088013 /* FireflyClient.h */,
-				9DA2472D1BA5F2E400088013 /* FireflyClient.m */,
-				9DDE31241C15EC1200245408 /* StandardSegue.h */,
-				9DDE31251C15EC1200245408 /* StandardSegue.m */,
-				9DCC9DEC1C76E15400889265 /* CommunityListDataSourceDelegate.h */,
-				9DCC9DED1C76E15400889265 /* CommunityListDataSourceDelegate.m */,
-				9D9866091C494B3D00B17E05 /* LocationManagerDelegate.h */,
-				9D98660A1C494B3D00B17E05 /* LocationManagerDelegate.m */,
+				9DA247131BA5EDE600088013 /* LaunchScreen.xib */,
+				9DA247111BA5EDE600088013 /* Images.xcassets */,
+				9DA531C41C2C542C008BECCA /* Settings.bundle */,
 			);
 			path = FireflyApp;
 			sourceTree = "<group>";
@@ -224,6 +214,58 @@
 				9DA2471F1BA5EDE600088013 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9DB96D251C8D36BF00DDEF25 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				9DA9DE751C72A9F70089151A /* SignUpController.h */,
+				9DA9DE761C72A9F70089151A /* SignUpController.m */,
+				9DA2470B1BA5EDE600088013 /* SignInController.h */,
+				9DA2470C1BA5EDE600088013 /* SignInController.m */,
+				9D9866091C494B3D00B17E05 /* LocationManagerDelegate.h */,
+				9D98660A1C494B3D00B17E05 /* LocationManagerDelegate.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		9DB96D271C8D36F900DDEF25 /* Communities */ = {
+			isa = PBXGroup;
+			children = (
+				9DCC9DEC1C76E15400889265 /* CommunityListDataSourceDelegate.h */,
+				9DCC9DED1C76E15400889265 /* CommunityListDataSourceDelegate.m */,
+				9DCC9DE61C76DDFA00889265 /* CommunityListController.h */,
+				9DCC9DE71C76DDFA00889265 /* CommunityListController.m */,
+				9D7F42191C77030700B744E6 /* AddCommunityController.h */,
+				9D7F421A1C77030700B744E6 /* AddCommunityController.m */,
+			);
+			name = Communities;
+			sourceTree = "<group>";
+		};
+		9DB96D281C8D36FF00DDEF25 /* Peers */ = {
+			isa = PBXGroup;
+			children = (
+				9DB96D1F1C8D313E00DDEF25 /* Peer.h */,
+				9DB96D201C8D313E00DDEF25 /* Peer.m */,
+				9DB96D221C8D315C00DDEF25 /* PeerListDataSourceDelegate.h */,
+				9DB96D231C8D315C00DDEF25 /* PeerListDataSourceDelegate.m */,
+				9D2DDF541C8D1BCB002054FC /* PeerListController.h */,
+				9D2DDF551C8D1BCB002054FC /* PeerListController.m */,
+			);
+			name = Peers;
+			sourceTree = "<group>";
+		};
+		9DB96D291C8D372B00DDEF25 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9DA247081BA5EDE600088013 /* AppDelegate.h */,
+				9DA247091BA5EDE600088013 /* AppDelegate.m */,
+				9DA2472C1BA5F2E400088013 /* FireflyClient.h */,
+				9DA2472D1BA5F2E400088013 /* FireflyClient.m */,
+				9DDE31241C15EC1200245408 /* StandardSegue.h */,
+				9DDE31251C15EC1200245408 /* StandardSegue.m */,
+			);
+			name = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,7 +477,9 @@
 				9DCC9DE81C76DDFA00889265 /* CommunityListController.m in Sources */,
 				9DA2470D1BA5EDE600088013 /* SignInController.m in Sources */,
 				9DA2470A1BA5EDE600088013 /* AppDelegate.m in Sources */,
+				9DB96D241C8D315C00DDEF25 /* PeerListDataSourceDelegate.m in Sources */,
 				9DA2472E1BA5F2E400088013 /* FireflyClient.m in Sources */,
+				9DB96D211C8D313E00DDEF25 /* Peer.m in Sources */,
 				9D2DDF561C8D1BCB002054FC /* PeerListController.m in Sources */,
 				9DA247071BA5EDE600088013 /* main.m in Sources */,
 				9D98660B1C494B3D00B17E05 /* LocationManagerDelegate.m in Sources */,

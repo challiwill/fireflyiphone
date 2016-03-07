@@ -45,7 +45,7 @@
                              animated:NO];
     [self.backendClient updateLocation:newLocation
                           SuccessBlock:nil
-                          FailureBlock:^void () {[self.backendClient reportLocationUpdateError];}];
+                          FailureBlock:nil];
 }
 
 
