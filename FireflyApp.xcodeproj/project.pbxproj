@@ -12,6 +12,7 @@
 		9D19A3E91BB11EC5000D3C07 /* FireflyClientSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D19A3E81BB11EC5000D3C07 /* FireflyClientSpec.mm */; };
 		9D1FD19E1BB27B0900577EB7 /* SignInControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FD19D1BB27B0900577EB7 /* SignInControllerSpec.mm */; };
 		9D2DDF561C8D1BCB002054FC /* PeerListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D2DDF551C8D1BCB002054FC /* PeerListController.m */; };
+		9D48D2471C8D5CF800DF712C /* Community.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D48D2461C8D5CF800DF712C /* Community.m */; };
 		9D698B9C1BE1F211004014A1 /* server.cer in Resources */ = {isa = PBXBuildFile; fileRef = 9D698B9B1BE1F211004014A1 /* server.cer */; };
 		9D7F421B1C77030700B744E6 /* AddCommunityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F421A1C77030700B744E6 /* AddCommunityController.m */; };
 		9D81997A1C49517F006EE164 /* LocationManagerDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D8199791C49517F006EE164 /* LocationManagerDelegateSpec.mm */; };
@@ -58,6 +59,9 @@
 		9D1FD19D1BB27B0900577EB7 /* SignInControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SignInControllerSpec.mm; sourceTree = "<group>"; };
 		9D2DDF541C8D1BCB002054FC /* PeerListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeerListController.h; sourceTree = "<group>"; };
 		9D2DDF551C8D1BCB002054FC /* PeerListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeerListController.m; sourceTree = "<group>"; };
+		9D48D2421C8D4F0A00DF712C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9D48D2451C8D5CF800DF712C /* Community.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Community.h; sourceTree = "<group>"; };
+		9D48D2461C8D5CF800DF712C /* Community.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Community.m; sourceTree = "<group>"; };
 		9D698B9B1BE1F211004014A1 /* server.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = server.cer; sourceTree = "<group>"; };
 		9D7F42191C77030700B744E6 /* AddCommunityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCommunityController.h; sourceTree = "<group>"; };
 		9D7F421A1C77030700B744E6 /* AddCommunityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCommunityController.m; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 		08168B572D8CE9A6444E5D44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D48D2421C8D4F0A00DF712C /* UIKit.framework */,
 				9D81997D1C4E92EA006EE164 /* Foundation.framework */,
 				9D81997B1C4E91F9006EE164 /* CoreLocation.framework */,
 				05A51A995421BD96BBCD00BA /* libPods-FireflyAppTests.a */,
@@ -238,6 +243,8 @@
 				9DCC9DE71C76DDFA00889265 /* CommunityListController.m */,
 				9D7F42191C77030700B744E6 /* AddCommunityController.h */,
 				9D7F421A1C77030700B744E6 /* AddCommunityController.m */,
+				9D48D2451C8D5CF800DF712C /* Community.h */,
+				9D48D2461C8D5CF800DF712C /* Community.m */,
 			);
 			name = Communities;
 			sourceTree = "<group>";
@@ -482,6 +489,7 @@
 				9DB96D211C8D313E00DDEF25 /* Peer.m in Sources */,
 				9D2DDF561C8D1BCB002054FC /* PeerListController.m in Sources */,
 				9DA247071BA5EDE600088013 /* main.m in Sources */,
+				9D48D2471C8D5CF800DF712C /* Community.m in Sources */,
 				9D98660B1C494B3D00B17E05 /* LocationManagerDelegate.m in Sources */,
 				9DCC9DEE1C76E15400889265 /* CommunityListDataSourceDelegate.m in Sources */,
 				9DA9DE771C72A9F70089151A /* SignUpController.m in Sources */,

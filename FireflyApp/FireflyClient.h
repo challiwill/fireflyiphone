@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 #import "AFNetworking/AFHTTPSessionManager.h"
 #import "LocationManagerDelegate.h"
+#import "Community.h"
+#import "Peer.h"
 
 @interface FireflyClient : NSObject
 

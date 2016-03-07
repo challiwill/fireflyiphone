@@ -51,13 +51,8 @@
              
              NSLog(@"signed up");
          }
-         if([responseObject isKindOfClass:[NSDictionary class]])
-         {
-             NSDictionary *results = responseObject;
-             self.userID = [[results objectForKey:@"data"] objectForKey:@"id"];
-         } else {
-             // TODO not sure
-         }
+         NSDictionary *results = responseObject;
+         self.userID = [[results objectForKey:@"data"] objectForKey:@"id"];
          return successBlock();
      }
                failure:^(NSURLSessionTask *operation, NSError *error)
@@ -91,13 +86,8 @@
              
              NSLog(@"signed in");
          }
-         if([responseObject isKindOfClass:[NSDictionary class]])
-         {
-             NSDictionary *results = responseObject;
-             self.userID = [[results objectForKey:@"data"] objectForKey:@"id"];
-         } else {
-             // TODO not sure
-         }
+         NSDictionary *results = responseObject;
+         self.userID = [[results objectForKey:@"data"] objectForKey:@"id"];
          return successBlock();
      }
                failure:^(NSURLSessionTask *operation, NSError *error)
@@ -145,13 +135,9 @@
               success:^(NSURLSessionTask *operation, id responseObject)
      {
          NSArray *groups;
-         if([responseObject isKindOfClass:[NSDictionary class]])
-         {
-             NSDictionary *results = responseObject;
-             groups = [results objectForKey:@"groups"];
-         } else {
-             // TODO not sure
-         }
+         NSDictionary *results = responseObject;
+         groups = [results objectForKey:@"groups"];
+         
          return successBlock(groups);
      }
               failure:^(NSURLSessionTask *operation, NSError *error){return failureBlock();}
@@ -176,10 +162,42 @@
 
 // PEERS
 - (void)fetchPeersWithSuccessBlock:(void (^)(NSArray *))successBlock
-                            FailureBlock:(void (^)())failureBlock
+                      FailureBlock:(void (^)())failureBlock
 {
+    [self fetchCommunitiesWithSuccessBlock:^(NSArray *communities){
+        __block NSMutableArray *peers = [[NSMutableArray alloc] init];
+        for (int i = 0; i < communities.count; i++) {
+            
+            [self prepareHeader];
+            
+            Community *community = communities[i];
+            NSString *peersForGroupPath = [NSString stringWithFormat: @"/groups/%@/users", community.cid];
+            // TODO add logging
+            [self.manager GET:peersForGroupPath
+                   parameters:nil
+                     progress:nil
+                      success:^(NSURLSessionTask *operation, id responseObject)
+             {
+                 NSArray *peersForGroup;
+                 NSDictionary *results = responseObject;
+                 peersForGroup = [results objectForKey:@"users"];
+                 for (NSDictionary *peerDictionary in peersForGroup) {
+                     Peer *newPeer = [[Peer alloc] initWithName:[peerDictionary valueForKey:@"name"] ID:[peerDictionary valueForKey:@"id"]];
+                     if ([peers filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self.uid == %@", newPeer.uid]] == nil) {
+                         [peers addObject:newPeer];
+                     }
+                 }
+                 
+             }
+                      failure:^(NSURLSessionTask *operation, NSError *error){return failureBlock();}];
+            
+        }
+        return successBlock(peers);
+    }
+                              FailureBlock:failureBlock];
 }
 
+// HELPERS
 - (void)prepareHeader
 {
     [self.manager.requestSerializer setValue:self.token forHTTPHeaderField:@"access-token"];
@@ -189,8 +207,6 @@
     [self.manager.requestSerializer setValue:self.uid forHTTPHeaderField:@"uid"];
 }
 
-
-// HELPERS
 - (void)reportLocationUpdateError
 {
     //TODO implement error alert
