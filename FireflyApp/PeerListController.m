@@ -6,6 +6,8 @@
 @property (nonatomic) CLLocationManager *locationManager;
 @property (nonatomic) UITableView *tableView;
 @property (nonatomic) PeerListDataSourceDelegate *tableViewDataSourceDelegate;
+// TODO need to set user on initialization
+@property (nonatomic) User *user;
 
 @end
 
@@ -37,12 +39,14 @@
     self.tableViewDataSourceDelegate = [[PeerListDataSourceDelegate alloc] init];
     self.tableView.dataSource = self.tableViewDataSourceDelegate;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:peerCellIdentifier];
-    [self.backendClient fetchPeersWithSuccessBlock:^void (NSArray *peers) {
-        [self.tableViewDataSourceDelegate configureWithPeers:peers];
-        [self.tableView reloadData];
-    }FailureBlock:^void (NSError *error) {
-        [self displayError:error];
-    }];
+    [self.backendClient fetchPeersForUser:self.user
+                             SuccessBlock:^void (NSArray *peers) {
+                                 [self.tableViewDataSourceDelegate configureWithPeers:peers];
+                                 [self.tableView reloadData];
+                             }
+                             FailureBlock:^void (NSError *error) {
+                                 [self displayError:error];
+                             }];
 }
 
 - (void)displayError:(NSError *)error

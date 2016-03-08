@@ -3,6 +3,7 @@
 #import "LocationManagerDelegate.h"
 #import "Community.h"
 #import "Peer.h"
+#import "User.h"
 
 @interface FireflyClient : NSObject
 
@@ -22,19 +23,23 @@
 
 // LOCATION
 - (void)updateLocation:(CLLocation *)newlocation
+               ForUser:(User *)user
           SuccessBlock:(void (^)())successBlock
           FailureBlock:(void (^)())failureBlock;
 
 // COMMUNITIES
-- (void)fetchCommunitiesWithSuccessBlock:(void (^)(NSArray *))successBlock
-                            FailureBlock:(void (^)())failureBlock;
-- (void) createCommunityWithName:(NSString *)name
-                    PrivacyLevel:(NSNumber *)privacyLevel
-                    SuccessBlock:(void (^)())successBlock
-                    FailureBlock:(void (^)())failureBlock;
+- (void)fetchCommunitiesForUser:(User *)user
+                   SuccessBlock:(void (^)(NSArray *))successBlock
+                   FailureBlock:(void (^)())failureBlock;
+- (void) createCommunityForUser:(User *)user
+                           Name:(NSString *)name
+                   PrivacyLevel:(NSNumber *)privacyLevel
+                   SuccessBlock:(void (^)())successBlock
+                   FailureBlock:(void (^)())failureBlock;
 
 // PEERS
-- (void)fetchPeersWithSuccessBlock:(void (^)(NSArray *))successBlock
-                      FailureBlock:(void (^)())failureBlock;
+- (void)fetchPeersForUser:(User *)user
+             SuccessBlock:(void (^)(NSArray *))successBlock
+             FailureBlock:(void (^)())failureBlock;
 
 @end

@@ -139,8 +139,10 @@ describe(@"FireflyClient", ^{
         __block void (^progress)(NSProgress *);
         __block void (^simulateSuccess)(NSURLSessionTask *, id);
         __block void (^simulateFailure)(NSURLSessionTask *, NSError *);
+        __block User *user;
         
         beforeEach(^{
+            user = [[User alloc] initWithName:@"Alice Brown" ID:@"1"];
             urlString = nil;
             parameters = nil;
             progress = nil;
@@ -166,13 +168,17 @@ describe(@"FireflyClient", ^{
                               // correct order given there are multiple queries
                               return 0;
                           });
-            
-            [subject fetchPeersWithSuccessBlock:^void(NSArray *){successBlockCalled = true;}
-                                   FailureBlock:^void(){failureBlockCalled = true;}];
+        });
+        
+        subjectAction(^{
+            [subject fetchPeersForUser:(User *)user
+                          SuccessBlock:^void(NSArray *){successBlockCalled = true;}
+                          FailureBlock:^void(){failureBlockCalled = true;}];
         });
         
         it(@"should make the right requests", ^{
-            urlString should equal(@"/users/1/groups/");
+            urlString should equal(@"/users/1/groups");
+            // TODO figure out how to test subsequent calls
             urlString should equal(@"/groups/1/users");
             urlString should equal(@"/groups/2/users");
         });

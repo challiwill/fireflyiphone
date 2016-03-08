@@ -3,18 +3,18 @@
 @interface Peer ()
 
 @property (nonatomic) NSString *name;
-@property (nonatomic) NSString *uid;
+@property (nonatomic) NSString *userID;
 
 @end
 
 @implementation Peer
 
-- (instancetype)initWithName:(NSString *)name ID:(NSString *)uid
+- (instancetype)initWithName:(NSString *)name ID:(NSString *)userID
 {
     self = [super init];
     if (self) {
         self.name = name;
-        self.uid = uid;
+        self.userID = userID;
     }
     return self;
 }

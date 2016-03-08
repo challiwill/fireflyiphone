@@ -30,7 +30,7 @@ describe(@"PeerListController", ^{
         __block void (^failureBlock)(NSArray *);
         
         beforeEach(^{
-            backendClient stub_method(@selector(fetchPeersWithSuccessBlock:FailureBlock:)).and_do_block(^void (void (^incomingSuccessBlock)(NSArray *), void(^incomingFailureBlock)(NSArray *)){
+            backendClient stub_method(@selector(fetchPeersForUser:SuccessBlock:FailureBlock:)).and_do_block(^void (User *incomingUser, void (^incomingSuccessBlock)(NSArray *), void(^incomingFailureBlock)(NSArray *)){
                 successBlock = incomingSuccessBlock;
                 failureBlock = incomingFailureBlock;
             });
@@ -38,13 +38,13 @@ describe(@"PeerListController", ^{
         });
         
         it(@"should fetch a list of peers from the backend client", ^{
-            backendClient should have_received(@selector(fetchPeersWithSuccessBlock:FailureBlock:));
+            backendClient should have_received(@selector(fetchPeersForUser:SuccessBlock:FailureBlock:));
         });
         
         context(@"when the backend client returns the list of peers successfully", ^{
             beforeEach(^{
-                Peer *peer = [[Peer alloc] initWithName:@"Bob"];
-                Peer *peer2 = [[Peer alloc] initWithName:@"Alice"];
+                Peer *peer = [[Peer alloc] initWithName:@"Bob" ID:@"1"];
+                Peer *peer2 = [[Peer alloc] initWithName:@"Alice" ID:@"2"];
                 if(successBlock) {
                     successBlock(@[peer, peer2]);
                 }

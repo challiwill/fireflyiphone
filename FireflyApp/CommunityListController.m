@@ -6,6 +6,8 @@
 @property (nonatomic) UITableView *tableView;
 @property (nonatomic) CommunityListDataSourceDelegate *tableViewDataSourceDelegate;
 @property (nonatomic) UIButton *addCommunityButton;
+//TODO need to set user on initialization
+@property (nonatomic) User *user;
 
 @end
 
@@ -46,16 +48,15 @@
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:communityCellIdentifier];
     
-    [self.backendClient fetchCommunitiesWithSuccessBlock:^void (NSArray *communities)
-     {
-         NSLog(@"successfuly got no communities");
-         [self.tableViewDataSourceDelegate configureWithCommunities:communities];
-         [self.tableView reloadData];
-     }
-                                            FailureBlock:^void ()
-     {
-         NSLog(@"failed to get communities");
-     }];
+    [self.backendClient fetchCommunitiesForUser:self.user
+                                   SuccessBlock:^void (NSArray *communities){
+                                       NSLog(@"successfuly got no communities");
+                                       [self.tableViewDataSourceDelegate configureWithCommunities:communities];
+                                       [self.tableView reloadData];
+                                   }
+                                   FailureBlock:^void (){
+                                       NSLog(@"failed to get communities");
+                                   }];
 }
 
 - (void)segueToAddCommunity

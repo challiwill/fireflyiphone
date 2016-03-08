@@ -5,10 +5,10 @@
 @property (nonatomic) NSString *token;
 @property (nonatomic) NSString *client;
 @property (nonatomic) NSString *expiry;
+// should be the same as userID but likely not right now
+// since it's provided by the devise gem
 @property (nonatomic) NSString *uid;
 
-@property (nonatomic) NSString *email;
-@property (nonatomic) NSString *userID;
 @property (nonatomic) AFHTTPSessionManager *manager;
 
 @end
@@ -52,7 +52,9 @@
              NSLog(@"signed up");
          }
          NSDictionary *results = responseObject;
-         self.userID = [[results objectForKey:@"data"] objectForKey:@"id"];
+         NSString *uid = [[results objectForKey:@"data"] objectForKey:@"id"];
+         // TODO create user and pass to successBlock
+         //User *user = [[User alloc]initWithName:@"" ID:uid];
          return successBlock();
      }
                failure:^(NSURLSessionTask *operation, NSError *error)
@@ -87,7 +89,9 @@
              NSLog(@"signed in");
          }
          NSDictionary *results = responseObject;
-         self.userID = [[results objectForKey:@"data"] objectForKey:@"id"];
+         NSString *uid = [[results objectForKey:@"data"] objectForKey:@"id"];
+         // TODO create user and pass to successBlock
+         //User *user = [[User alloc]initWithName:@"" ID:uid];
          return successBlock();
      }
                failure:^(NSURLSessionTask *operation, NSError *error)
@@ -100,12 +104,13 @@
 
 // LOCATION
 - (void)updateLocation:(CLLocation *)newLocation
+               ForUser:(User *)user
           SuccessBlock:(void (^)())successBlock
           FailureBlock:(void (^)())failureBlock;
 {
     [self prepareHeader];
     
-    NSString *patchPath = [NSString stringWithFormat: @"/users/%@", self.userID];
+    NSString *patchPath = [NSString stringWithFormat: @"/users/%@", user.uid];
     NSNumber *latitude = @(newLocation.coordinate.latitude);
     NSNumber *longitude = @(newLocation.coordinate.longitude);
     NSDictionary *params = @{@"user": @{@"latitude":latitude, @"longitude":longitude}};
@@ -122,12 +127,13 @@
 }
 
 // COMMUNITIES
-- (void)fetchCommunitiesWithSuccessBlock:(void (^)(NSArray *))successBlock
-                            FailureBlock:(void (^)())failureBlock
+- (void)fetchCommunitiesForUser:(User *)user
+                   SuccessBlock:(void (^)(NSArray *))successBlock
+                   FailureBlock:(void (^)())failureBlock
 {
     [self prepareHeader];
     
-    NSString *groupsPath = [NSString stringWithFormat: @"/users/%@/groups", self.userID];
+    NSString *groupsPath = [NSString stringWithFormat: @"/users/%@/groups", user.uid];
     // TODO add logging
     [self.manager GET:groupsPath
            parameters:nil
@@ -144,13 +150,14 @@
      ];
 }
 
-- (void) createCommunityWithName:(NSString *)name
-                    PrivacyLevel:(NSNumber *)privacyLevel
-                    SuccessBlock:(void (^)())successBlock
-                    FailureBlock:(void (^)())failureBlock
+- (void) createCommunityForUser:(User *)user
+                           Name:(NSString *)name
+                   PrivacyLevel:(NSNumber *)privacyLevel
+                   SuccessBlock:(void (^)())successBlock
+                   FailureBlock:(void (^)())failureBlock
 {
     [self prepareHeader];
-    NSDictionary *params = @{@"user_id":self.userID, @"name":name, @"privacy_level":privacyLevel};
+    NSDictionary *params = @{@"user_id":user.uid, @"name":name, @"privacy_level":privacyLevel};
     
     [self.manager POST:@"/groups"
             parameters:params
@@ -161,40 +168,42 @@
 }
 
 // PEERS
-- (void)fetchPeersWithSuccessBlock:(void (^)(NSArray *))successBlock
-                      FailureBlock:(void (^)())failureBlock
+- (void)fetchPeersForUser:(User *)user
+             SuccessBlock:(void (^)(NSArray *))successBlock
+             FailureBlock:(void (^)())failureBlock
 {
-    [self fetchCommunitiesWithSuccessBlock:^(NSArray *communities){
-        __block NSMutableArray *peers = [[NSMutableArray alloc] init];
-        for (int i = 0; i < communities.count; i++) {
-            
-            [self prepareHeader];
-            
-            Community *community = communities[i];
-            NSString *peersForGroupPath = [NSString stringWithFormat: @"/groups/%@/users", community.cid];
-            // TODO add logging
-            [self.manager GET:peersForGroupPath
-                   parameters:nil
-                     progress:nil
-                      success:^(NSURLSessionTask *operation, id responseObject)
-             {
-                 NSArray *peersForGroup;
-                 NSDictionary *results = responseObject;
-                 peersForGroup = [results objectForKey:@"users"];
-                 for (NSDictionary *peerDictionary in peersForGroup) {
-                     Peer *newPeer = [[Peer alloc] initWithName:[peerDictionary valueForKey:@"name"] ID:[peerDictionary valueForKey:@"id"]];
-                     if ([peers filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self.uid == %@", newPeer.uid]] == nil) {
-                         [peers addObject:newPeer];
+    [self fetchCommunitiesForUser:user
+                     SuccessBlock:^(NSArray *communities){
+                         __block NSMutableArray *peers = [[NSMutableArray alloc] init];
+                         for (int i = 0; i < communities.count; i++) {
+                             
+                             [self prepareHeader];
+                             
+                             Community *community = communities[i];
+                             NSString *peersForGroupPath = [NSString stringWithFormat: @"/groups/%@/users", community.cid];
+                             // TODO add logging
+                             [self.manager GET:peersForGroupPath
+                                    parameters:nil
+                                      progress:nil
+                                       success:^(NSURLSessionTask *operation, id responseObject)
+                              {
+                                  NSArray *peersForGroup;
+                                  NSDictionary *results = responseObject;
+                                  peersForGroup = [results objectForKey:@"users"];
+                                  for (NSDictionary *peerDictionary in peersForGroup) {
+                                      Peer *newPeer = [[Peer alloc] initWithName:[peerDictionary valueForKey:@"name"] ID:[peerDictionary valueForKey:@"id"]];
+                                      if ([peers filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self.userID == %@", newPeer.userID]] == nil) {
+                                          [peers addObject:newPeer];
+                                      }
+                                  }
+                                  
+                              }
+                                       failure:^(NSURLSessionTask *operation, NSError *error){return failureBlock();}];
+                             
+                         }
+                         return successBlock(peers);
                      }
-                 }
-                 
-             }
-                      failure:^(NSURLSessionTask *operation, NSError *error){return failureBlock();}];
-            
-        }
-        return successBlock(peers);
-    }
-                              FailureBlock:failureBlock];
+                     FailureBlock:failureBlock];
 }
 
 // HELPERS

@@ -3,8 +3,8 @@
 @interface Peer : NSObject
 
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) NSString *uid;
+@property (nonatomic, readonly) NSString *userID;
 
-- (instancetype)initWithName:(NSString *)name ID:(NSString *)uid;
+- (instancetype)initWithName:(NSString *)name ID:(NSString *)userID;
 
 @end

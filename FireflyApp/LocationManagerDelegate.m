@@ -2,8 +2,11 @@
 
 @interface LocationManagerDelegate ()
 
+// TODO get rid of mapView
 @property (nonatomic) MGLMapView *mapView;
 @property (nonatomic) FireflyClient *backendClient;
+// TODO need to set user on initializatioin
+@property(nonatomic) User *user;
 
 
 @end
@@ -44,6 +47,7 @@
                             zoomLevel:15
                              animated:NO];
     [self.backendClient updateLocation:newLocation
+                               ForUser:self.user
                           SuccessBlock:nil
                           FailureBlock:nil];
 }
