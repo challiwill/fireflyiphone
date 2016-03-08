@@ -2,8 +2,8 @@
 
 @interface User()
 
-@property (nonatomic) NSString *uid;
 @property (nonatomic) NSString *name;
+@property (nonatomic) NSString *uid;
 
 @end
 

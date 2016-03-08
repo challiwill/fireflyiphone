@@ -7,7 +7,8 @@
 @interface CommunityListController : UIViewController
 
 @property (nonatomic, readonly) FireflyClient *backendClient;
+@property (nonatomic, readonly) User *user;
 
-- (instancetype)initWithBackendClient:(FireflyClient *)backendClient;
+- (instancetype)initWithBackendClient:(FireflyClient *)backendClient User:(User *)user;
 
 @end

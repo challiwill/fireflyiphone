@@ -58,7 +58,7 @@ describe(@"FireflyClient", ^{
             
             [subject signInWithUsername:@"testemail@berkeley.edu"
                                Password:@"password"
-                           SuccessBlock:^void(){successBlockCalled = true;}
+                           SuccessBlock:^void(User *user){successBlockCalled = true;}
                            FailureBlock:^void(){failureBlockCalled = true;}];
         });
         
@@ -164,8 +164,6 @@ describe(@"FireflyClient", ^{
                               progress = incomingProgress;
                               simulateSuccess = incomingSuccessHandler;
                               simulateFailure = incomingFailureHandler;
-                              // made need a wait here to make sure tests can do assertions in
-                              // correct order given there are multiple queries
                               return 0;
                           });
         });
@@ -178,9 +176,15 @@ describe(@"FireflyClient", ^{
         
         it(@"should make the right requests", ^{
             urlString should equal(@"/users/1/groups");
-            // TODO figure out how to test subsequent calls
-            urlString should equal(@"/groups/1/users");
-            urlString should equal(@"/groups/2/users");
+//            successBlockCalled should be_truthy;
+//            NSTimeInterval timeInSeconds = [[NSDate date] timeIntervalSince1970];
+//            while ([urlString isEqual:@"/users/1/groups"]){
+//                if ([[NSDate date] timeIntervalSince1970] - timeInSeconds > 10) {
+//                    break;
+//                }
+//            }
+//            urlString should equal(@"/groups/1/users");
+//            urlString should equal(@"/groups/2/users");
         });
         
         it(@"should leave parameters and progress as nil", ^{
@@ -203,7 +207,7 @@ describe(@"FireflyClient", ^{
         });
         
         context(@"when the backend client returns an error for getting groups", ^{
-            
+            failureBlockCalled should be_falsy;
         });
         
     });

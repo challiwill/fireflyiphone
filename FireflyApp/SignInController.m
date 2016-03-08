@@ -33,23 +33,23 @@
     self.passwordField = [[UITextField alloc] initWithFrame:CGRectMake(35, 465, 300, 50)];
     self.signInButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.signUpButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-
+    
     [self.view addSubview:self.emailField];
     [self.view addSubview:self.passwordField];
     [self.view addSubview:self.signInButton];
     [self.view addSubview:self.signUpButton];
-
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     self.view.backgroundColor = [UIColor darkGrayColor];
-
+    
     self.emailField.borderStyle = UITextBorderStyleRoundedRect;
     self.passwordField.borderStyle = UITextBorderStyleRoundedRect;
-
+    
     self.emailField.placeholder = @"email";
     self.passwordField.placeholder = @"password";
     self.passwordField.secureTextEntry = YES;
@@ -60,7 +60,7 @@
     [self.signUpButton setTitle:@"Sign Up" forState:UIControlStateNormal];
     [self.signUpButton addTarget:self action:@selector(signUp) forControlEvents:UIControlEventTouchUpInside];
     self.signUpButton.frame = CGRectMake(80, 520, 75, 50);
-
+    
 }
 
 - (void)signIn
@@ -70,20 +70,21 @@
     // TODO some level of checks on user/password here (at least not empty)?
     [self.backendClient signInWithUsername:self.emailField.text
                                   Password:self.passwordField.text
-                              SuccessBlock:^void () {[self segueToPeerList];}
+                              SuccessBlock:^void (User *user) {[self segueToPeerList:user];}
                               FailureBlock:^void () {NSLog(@"Login failed");}];
 }
 
-- (void)segueToPeerList
+- (void)segueToPeerList:(User *)user
 {
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];
     PeerListController *peerListController = [[PeerListController alloc]
-                                                initWithBackendClient:self.backendClient
-                                                LocationManager:locationManager];
+                                              initWithBackendClient:self.backendClient
+                                              LocationManager:locationManager
+                                              User:user];
     StandardSegue *segue = [[StandardSegue alloc]
-                                initWithIdentifier:@"signInToPeerList"
-                                            source:self
-                                       destination:peerListController];
+                            initWithIdentifier:@"signInToPeerList"
+                            source:self
+                            destination:peerListController];
     [self prepareForSegue:segue sender:self];
     [segue perform];
 }

@@ -6,18 +6,18 @@
 @property (nonatomic) UITableView *tableView;
 @property (nonatomic) CommunityListDataSourceDelegate *tableViewDataSourceDelegate;
 @property (nonatomic) UIButton *addCommunityButton;
-//TODO need to set user on initialization
 @property (nonatomic) User *user;
 
 @end
 
 @implementation CommunityListController
 
-- (instancetype)initWithBackendClient:(FireflyClient *)backendClient
+- (instancetype)initWithBackendClient:(FireflyClient *)backendClient User:(User *)user
 {
     self = [super init];
     if (self) {
         self.backendClient = backendClient;
+        self.user = user;
     }
     return self;
 }
@@ -62,7 +62,7 @@
 - (void)segueToAddCommunity
 {
     AddCommunityController *addCommunityController = [[AddCommunityController alloc]
-                                                      initWithBackendClient:self.backendClient];
+                                                      initWithBackendClient:self.backendClient User:self.user];
     StandardSegue *segue = [[StandardSegue alloc]
                             initWithIdentifier:@"communityListToAddCommunity"
                             source:self

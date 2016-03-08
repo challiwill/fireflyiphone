@@ -6,6 +6,6 @@
 
 @property (nonatomic, readonly) FireflyClient *backendClient;
 
-- (instancetype)initWithBackendClient:(FireflyClient *)backendClient;
+- (instancetype)initWithBackendClient:(FireflyClient *)backendClient User:(User *)user;
 
 @end

@@ -5,7 +5,6 @@
 // TODO get rid of mapView
 @property (nonatomic) MGLMapView *mapView;
 @property (nonatomic) FireflyClient *backendClient;
-// TODO need to set user on initializatioin
 @property(nonatomic) User *user;
 
 
@@ -15,11 +14,13 @@
 
 - (instancetype)initWithMapView:(MGLMapView *)mapView
                   BackendClient:(FireflyClient *)backendClient
+                           User:(User *)user
 {
     self = [super init];
     if (self) {
         self.mapView = mapView;
         self.backendClient = backendClient;
+        self.user = user;
     }
     return self;
 }

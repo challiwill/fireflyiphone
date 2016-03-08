@@ -2,8 +2,8 @@
 #import "FireflyClient.h"
 #import "SignUpController.h"
 #import "StandardSegue.h"
-#import "Mapbox/Mapbox.h"
 #import "PeerListController.h"
+#import "User.h"
 
 @class FireflyClient;
 
@@ -16,7 +16,7 @@
 
 - (instancetype)initWithBackendClient:(FireflyClient *)backendClient;
 - (void)signIn;
-- (void)segueToPeerList;
+- (void)segueToPeerList:(User *)user;
 
 @end
 

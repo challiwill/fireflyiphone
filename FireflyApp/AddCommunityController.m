@@ -3,6 +3,7 @@
 @interface AddCommunityController ()
 
 @property (nonatomic) FireflyClient *backendClient;
+@property (nonatomic) User *user;
 @property (nonatomic) UITextField *communityName;
 @property (nonatomic) UITextField *communityDescription;
 // TODO should it be a radio button with privacy options?
@@ -14,11 +15,12 @@
 
 @implementation AddCommunityController
 
-- (instancetype)initWithBackendClient:(FireflyClient *)backendClient
+- (instancetype)initWithBackendClient:(FireflyClient *)backendClient User:(User *)user
 {
     self = [super init];
     if (self) {
         self.backendClient = backendClient;
+        self.user = user;
     }
     return self;
 }
@@ -50,7 +52,7 @@
 
 - (void)cancel
 {
-    [self segueToCommunityList];
+    [self segueToCommunityList:self.user];
 }
 
 - (void)createCommunity
@@ -59,9 +61,9 @@
     //    [self.backendClient createCommunity];
 }
 
-- (void)segueToCommunityList
+- (void)segueToCommunityList:(User *)user
 {
-    CommunityListController *communityListController = [[CommunityListController alloc] initWithBackendClient:self.backendClient];
+    CommunityListController *communityListController = [[CommunityListController alloc] initWithBackendClient:self.backendClient User:user];
     
     StandardSegue *segue = [[StandardSegue alloc]
                             initWithIdentifier:@"addCommunityToCommunityList"

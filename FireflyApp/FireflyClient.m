@@ -5,7 +5,7 @@
 @property (nonatomic) NSString *token;
 @property (nonatomic) NSString *client;
 @property (nonatomic) NSString *expiry;
-// should be the same as userID but likely not right now
+// should be the same as user's userID but likely not right now
 // since it's provided by the devise gem
 @property (nonatomic) NSString *uid;
 
@@ -32,7 +32,7 @@
 // USER
 - (void)signUpWithUsername:(NSString *)username
                   Password:(NSString *)password
-              SuccessBlock:(void (^)())successBlock
+              SuccessBlock:(void (^)(User *))successBlock
               FailureBlock:(void (^)())failureBlock
 {
     NSDictionary *params = @{@"email": username, @"password": password};
@@ -53,9 +53,8 @@
          }
          NSDictionary *results = responseObject;
          NSString *uid = [[results objectForKey:@"data"] objectForKey:@"id"];
-         // TODO create user and pass to successBlock
-         //User *user = [[User alloc]initWithName:@"" ID:uid];
-         return successBlock();
+         User *user = [[User alloc]initWithName:@"" ID:uid];
+         return successBlock(user);
      }
                failure:^(NSURLSessionTask *operation, NSError *error)
      {
@@ -69,7 +68,7 @@
 
 - (void)signInWithUsername:(NSString *)username
                   Password:(NSString *)password
-              SuccessBlock:(void (^)())successBlock
+              SuccessBlock:(void (^)(User *))successBlock
               FailureBlock:(void (^)())failureBlock;
 {
     NSDictionary *params = @{@"email": username, @"password": password};
@@ -90,9 +89,8 @@
          }
          NSDictionary *results = responseObject;
          NSString *uid = [[results objectForKey:@"data"] objectForKey:@"id"];
-         // TODO create user and pass to successBlock
-         //User *user = [[User alloc]initWithName:@"" ID:uid];
-         return successBlock();
+         User *user = [[User alloc]initWithName:@"" ID:uid];
+         return successBlock(user);
      }
                failure:^(NSURLSessionTask *operation, NSError *error)
      {
@@ -214,11 +212,6 @@
     [self.manager.requestSerializer setValue:self.client forHTTPHeaderField:@"client"];
     [self.manager.requestSerializer setValue:self.expiry forHTTPHeaderField:@"expiry"];
     [self.manager.requestSerializer setValue:self.uid forHTTPHeaderField:@"uid"];
-}
-
-- (void)reportLocationUpdateError
-{
-    //TODO implement error alert
 }
 
 @end

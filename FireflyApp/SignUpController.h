@@ -2,6 +2,7 @@
 #import "FireflyClient.h"
 #import "StandardSegue.h"
 #import "SignInController.h"
+#import "User.h"
 
 @interface SignUpController : UIViewController
 

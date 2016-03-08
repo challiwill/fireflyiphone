@@ -14,11 +14,11 @@
 // USER
 - (void)signUpWithUsername:(NSString *)username
                   Password:(NSString *)password
-              SuccessBlock:(void (^)())successBlock
+              SuccessBlock:(void (^)(User *))successBlock
               FailureBlock:(void (^)())failureBlock;
 - (void)signInWithUsername:(NSString *)username
                   Password:(NSString *)password
-              SuccessBlock:(void (^)())successBlock
+              SuccessBlock:(void (^)(User *))successBlock
               FailureBlock:(void (^)())failureBlock;
 
 // LOCATION

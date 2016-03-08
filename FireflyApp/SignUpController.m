@@ -76,13 +76,13 @@
 {
     [self.backendClient signUpWithUsername:self.emailField.text
                                   Password:self.passwordField.text
-                              SuccessBlock:^void () {[self segueToCommunityListController];}
+                              SuccessBlock:^void (User *user) {[self segueToCommunityListController:user];}
                               FailureBlock:^void () {NSLog(@"Sign Up failed");}];
 }
 
-- (void)segueToCommunityListController
+- (void)segueToCommunityListController:(User *)user
 {
-    CommunityListController *communityListController = [[CommunityListController alloc] initWithBackendClient:self.backendClient];
+    CommunityListController *communityListController = [[CommunityListController alloc] initWithBackendClient:self.backendClient User:user];
 
     StandardSegue *segue = [[StandardSegue alloc]
                             initWithIdentifier:@"signUpToCommunityList"

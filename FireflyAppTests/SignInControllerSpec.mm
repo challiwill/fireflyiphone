@@ -55,8 +55,13 @@ describe(@"SignInController", ^{
     // cannot test with view controllers because it's not actually in the
     //   context
     describe(@"-segueToPeerList", ^{
+        __block User *user;
+        beforeEach(^{
+            user = nice_fake_for([User class]);
+        });
+        
         subjectAction(^{
-            [subject segueToPeerList];
+            [subject segueToPeerList:user];
         });
         
         it(@"should segue to the map view controller", ^{

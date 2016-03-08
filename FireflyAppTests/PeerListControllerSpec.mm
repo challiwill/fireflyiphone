@@ -11,13 +11,16 @@ describe(@"PeerListController", ^{
     __block PeerListController *subject;
     __block FireflyClient *backendClient;
     __block CLLocationManager *locationManager;
+    __block User *user;
     
     beforeEach(^{
         backendClient = nice_fake_for([FireflyClient class]);
         locationManager = nice_fake_for([CLLocationManager class]);
+        user = nice_fake_for([User class]);
         
         subject = [[PeerListController alloc] initWithBackendClient:backendClient
-                                                    LocationManager:locationManager];
+                                                    LocationManager:locationManager
+                                                               User:user];
     });
     
     it(@"initializes with properties set", ^{

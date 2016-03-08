@@ -11,6 +11,6 @@
 @property (nonatomic, readonly) UITableView *tableView;
 @property (nonatomic, readonly) PeerListDataSourceDelegate *tableViewDataSourceDelegate;
 
-- (instancetype)initWithBackendClient:(FireflyClient *)backendClient LocationManager:(CLLocationManager *)locationManager;
+- (instancetype)initWithBackendClient:(FireflyClient *)backendClient LocationManager:(CLLocationManager *)locationManager User:(User *)user;
 
 @end

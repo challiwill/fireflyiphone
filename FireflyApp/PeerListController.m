@@ -6,19 +6,19 @@
 @property (nonatomic) CLLocationManager *locationManager;
 @property (nonatomic) UITableView *tableView;
 @property (nonatomic) PeerListDataSourceDelegate *tableViewDataSourceDelegate;
-// TODO need to set user on initialization
 @property (nonatomic) User *user;
 
 @end
 
 @implementation PeerListController
 
-- (instancetype)initWithBackendClient:(FireflyClient *)backendClient LocationManager:(CLLocationManager *)locationManager
+- (instancetype)initWithBackendClient:(FireflyClient *)backendClient LocationManager:(CLLocationManager *)locationManager User:(User *)user
 {
     self = [super init];
     if (self) {
         self.backendClient = backendClient;
         self.locationManager = locationManager;
+        self.user = user;
     }
     return self;
 }
