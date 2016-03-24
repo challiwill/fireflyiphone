@@ -177,10 +177,12 @@
 		9DA247031BA5EDE600088013 /* FireflyApp */ = {
 			isa = PBXGroup;
 			children = (
-				9DB96D291C8D372B00DDEF25 /* App */,
-				9DB96D251C8D36BF00DDEF25 /* User */,
-				9DB96D271C8D36F900DDEF25 /* Communities */,
-				9DB96D281C8D36FF00DDEF25 /* Peers */,
+				9DA247081BA5EDE600088013 /* AppDelegate.h */,
+				9DA247091BA5EDE600088013 /* AppDelegate.m */,
+				9DB25BE41CA39E1000272280 /* Controllers */,
+				9DB25BE31CA39DE000272280 /* Models */,
+				9DB25BE61CA3A01D00272280 /* Views */,
+				9DB96D251C8D36BF00DDEF25 /* API */,
 				9DA247041BA5EDE600088013 /* Supporting Files */,
 				9DA247131BA5EDE600088013 /* LaunchScreen.xib */,
 				9DA247111BA5EDE600088013 /* Images.xcassets */,
@@ -224,60 +226,106 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9DB96D251C8D36BF00DDEF25 /* User */ = {
+		9DB25BE31CA39DE000272280 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9D6CCE751C8E939600A60E5F /* User.h */,
+				9D6CCE761C8E939600A60E5F /* User.m */,
+				9D48D2451C8D5CF800DF712C /* Community.h */,
+				9D48D2461C8D5CF800DF712C /* Community.m */,
+				9DB96D1F1C8D313E00DDEF25 /* Peer.h */,
+				9DB96D201C8D313E00DDEF25 /* Peer.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		9DB25BE41CA39E1000272280 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9DB25BE81CA3A29800272280 /* SignIn */,
+				9DB25BE71CA3A28F00272280 /* SignUp */,
+				9DB25BE91CA3A29E00272280 /* CommunityList */,
+				9DB25BEA1CA3A2A800272280 /* AddCommunity */,
+				9DB25BEB1CA3A2B000272280 /* PeerList */,
+				9DB25BE51CA39E5200272280 /* Helpers */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9DB25BE51CA39E5200272280 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9DDE31241C15EC1200245408 /* StandardSegue.h */,
+				9DDE31251C15EC1200245408 /* StandardSegue.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		9DB25BE61CA3A01D00272280 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9DB25BE71CA3A28F00272280 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
 				9DA9DE751C72A9F70089151A /* SignUpController.h */,
 				9DA9DE761C72A9F70089151A /* SignUpController.m */,
-				9DA2470B1BA5EDE600088013 /* SignInController.h */,
-				9DA2470C1BA5EDE600088013 /* SignInController.m */,
-				9D9866091C494B3D00B17E05 /* LocationManagerDelegate.h */,
-				9D98660A1C494B3D00B17E05 /* LocationManagerDelegate.m */,
-				9D6CCE751C8E939600A60E5F /* User.h */,
-				9D6CCE761C8E939600A60E5F /* User.m */,
 			);
-			name = User;
+			name = SignUp;
 			sourceTree = "<group>";
 		};
-		9DB96D271C8D36F900DDEF25 /* Communities */ = {
+		9DB25BE81CA3A29800272280 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				9DA2470B1BA5EDE600088013 /* SignInController.h */,
+				9DA2470C1BA5EDE600088013 /* SignInController.m */,
+			);
+			name = SignIn;
+			sourceTree = "<group>";
+		};
+		9DB25BE91CA3A29E00272280 /* CommunityList */ = {
 			isa = PBXGroup;
 			children = (
 				9DCC9DEC1C76E15400889265 /* CommunityListDataSourceDelegate.h */,
 				9DCC9DED1C76E15400889265 /* CommunityListDataSourceDelegate.m */,
 				9DCC9DE61C76DDFA00889265 /* CommunityListController.h */,
 				9DCC9DE71C76DDFA00889265 /* CommunityListController.m */,
-				9D7F42191C77030700B744E6 /* AddCommunityController.h */,
-				9D7F421A1C77030700B744E6 /* AddCommunityController.m */,
-				9D48D2451C8D5CF800DF712C /* Community.h */,
-				9D48D2461C8D5CF800DF712C /* Community.m */,
 			);
-			name = Communities;
+			name = CommunityList;
 			sourceTree = "<group>";
 		};
-		9DB96D281C8D36FF00DDEF25 /* Peers */ = {
+		9DB25BEA1CA3A2A800272280 /* AddCommunity */ = {
 			isa = PBXGroup;
 			children = (
-				9DB96D1F1C8D313E00DDEF25 /* Peer.h */,
-				9DB96D201C8D313E00DDEF25 /* Peer.m */,
+				9D7F42191C77030700B744E6 /* AddCommunityController.h */,
+				9D7F421A1C77030700B744E6 /* AddCommunityController.m */,
+			);
+			name = AddCommunity;
+			sourceTree = "<group>";
+		};
+		9DB25BEB1CA3A2B000272280 /* PeerList */ = {
+			isa = PBXGroup;
+			children = (
+				9D9866091C494B3D00B17E05 /* LocationManagerDelegate.h */,
+				9D98660A1C494B3D00B17E05 /* LocationManagerDelegate.m */,
 				9DB96D221C8D315C00DDEF25 /* PeerListDataSourceDelegate.h */,
 				9DB96D231C8D315C00DDEF25 /* PeerListDataSourceDelegate.m */,
 				9D2DDF541C8D1BCB002054FC /* PeerListController.h */,
 				9D2DDF551C8D1BCB002054FC /* PeerListController.m */,
 			);
-			name = Peers;
+			name = PeerList;
 			sourceTree = "<group>";
 		};
-		9DB96D291C8D372B00DDEF25 /* App */ = {
+		9DB96D251C8D36BF00DDEF25 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				9DA247081BA5EDE600088013 /* AppDelegate.h */,
-				9DA247091BA5EDE600088013 /* AppDelegate.m */,
 				9DA2472C1BA5F2E400088013 /* FireflyClient.h */,
 				9DA2472D1BA5F2E400088013 /* FireflyClient.m */,
-				9DDE31241C15EC1200245408 /* StandardSegue.h */,
-				9DDE31251C15EC1200245408 /* StandardSegue.m */,
 			);
-			name = App;
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
