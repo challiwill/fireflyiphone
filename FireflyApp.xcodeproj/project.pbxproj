@@ -100,8 +100,8 @@
 		9DB96D231C8D315C00DDEF25 /* PeerListDataSourceDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeerListDataSourceDelegate.m; sourceTree = "<group>"; };
 		9DCC9DE61C76DDFA00889265 /* CommunityListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityListController.h; sourceTree = "<group>"; };
 		9DCC9DE71C76DDFA00889265 /* CommunityListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityListController.m; sourceTree = "<group>"; };
-		9DCC9DEC1C76E15400889265 /* CommunityListDataSourceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommunityListDataSourceDelegate.h; path = ../CommunityListDataSourceDelegate.h; sourceTree = "<group>"; };
-		9DCC9DED1C76E15400889265 /* CommunityListDataSourceDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommunityListDataSourceDelegate.m; path = ../CommunityListDataSourceDelegate.m; sourceTree = "<group>"; };
+		9DCC9DEC1C76E15400889265 /* CommunityListDataSourceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityListDataSourceDelegate.h; sourceTree = "<group>"; };
+		9DCC9DED1C76E15400889265 /* CommunityListDataSourceDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityListDataSourceDelegate.m; sourceTree = "<group>"; };
 		9DDE31241C15EC1200245408 /* StandardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardSegue.h; sourceTree = "<group>"; };
 		9DDE31251C15EC1200245408 /* StandardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardSegue.m; sourceTree = "<group>"; };
 		B0F01F01E607D699A66F8BA1 /* Pods-FireflyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireflyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireflyApp/Pods-FireflyApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -236,7 +236,7 @@
 				9DB96D1F1C8D313E00DDEF25 /* Peer.h */,
 				9DB96D201C8D313E00DDEF25 /* Peer.m */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9DB25BE41CA39E1000272280 /* Controllers */ = {
@@ -250,7 +250,8 @@
 				9DB25BE51CA39E5200272280 /* Helpers */,
 			);
 			name = Controllers;
-			sourceTree = "<group>";
+			path = /Users/corbin/Projects/fireflyiphone/FireflyApp/Controllers;
+			sourceTree = "<absolute>";
 		};
 		9DB25BE51CA39E5200272280 /* Helpers */ = {
 			isa = PBXGroup;
@@ -258,7 +259,7 @@
 				9DDE31241C15EC1200245408 /* StandardSegue.h */,
 				9DDE31251C15EC1200245408 /* StandardSegue.m */,
 			);
-			name = Helpers;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		9DB25BE61CA3A01D00272280 /* Views */ = {
@@ -266,7 +267,8 @@
 			children = (
 			);
 			name = Views;
-			sourceTree = "<group>";
+			path = /Users/corbin/Projects/fireflyiphone/FireflyApp/Views;
+			sourceTree = "<absolute>";
 		};
 		9DB25BE71CA3A28F00272280 /* SignUp */ = {
 			isa = PBXGroup;
@@ -274,7 +276,7 @@
 				9DA9DE751C72A9F70089151A /* SignUpController.h */,
 				9DA9DE761C72A9F70089151A /* SignUpController.m */,
 			);
-			name = SignUp;
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		9DB25BE81CA3A29800272280 /* SignIn */ = {
@@ -284,7 +286,8 @@
 				9DA2470C1BA5EDE600088013 /* SignInController.m */,
 			);
 			name = SignIn;
-			sourceTree = "<group>";
+			path = /Users/corbin/Projects/fireflyiphone/FireflyApp/Controllers/SignIn;
+			sourceTree = "<absolute>";
 		};
 		9DB25BE91CA3A29E00272280 /* CommunityList */ = {
 			isa = PBXGroup;
@@ -295,7 +298,8 @@
 				9DCC9DE71C76DDFA00889265 /* CommunityListController.m */,
 			);
 			name = CommunityList;
-			sourceTree = "<group>";
+			path = /Users/corbin/Projects/fireflyiphone/FireflyApp/Controllers/CommunityList;
+			sourceTree = "<absolute>";
 		};
 		9DB25BEA1CA3A2A800272280 /* AddCommunity */ = {
 			isa = PBXGroup;
@@ -303,7 +307,7 @@
 				9D7F42191C77030700B744E6 /* AddCommunityController.h */,
 				9D7F421A1C77030700B744E6 /* AddCommunityController.m */,
 			);
-			name = AddCommunity;
+			path = AddCommunity;
 			sourceTree = "<group>";
 		};
 		9DB25BEB1CA3A2B000272280 /* PeerList */ = {
@@ -316,7 +320,7 @@
 				9D2DDF541C8D1BCB002054FC /* PeerListController.h */,
 				9D2DDF551C8D1BCB002054FC /* PeerListController.m */,
 			);
-			name = PeerList;
+			path = PeerList;
 			sourceTree = "<group>";
 		};
 		9DB96D251C8D36BF00DDEF25 /* API */ = {
@@ -326,7 +330,8 @@
 				9DA2472D1BA5F2E400088013 /* FireflyClient.m */,
 			);
 			name = API;
-			sourceTree = "<group>";
+			path = /Users/corbin/Projects/fireflyiphone/FireflyApp/API;
+			sourceTree = "<absolute>";
 		};
 /* End PBXGroup section */
 
