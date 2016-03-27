@@ -1,6 +1,6 @@
 #import "Cedar.h"
 #import "FireflyClient.h"
-#import "AFNetworking/AFHTTPSessionManager.h"
+//#import "AFNetworking/AFHTTPSessionManager.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -75,32 +75,30 @@ describe(@"FireflyClient", ^{
             progress should be_nil;
         });
         
-        //        context(@"when the user/password is valid and the request succeeds", ^{
-        //            __block NSURLSessionTask *operation;
-        //            __block NSHTTPURLResponse *theResponse;
-        //            beforeEach(^{
-        //                operation = nice_fake_for([NSURLSessionTask class]);
-        //                theResponse = nice_fake_for([NSHTTPURLResponse class]);
-        //
-        //                operation stub_method(@selector(response))
-        //                .and_do_block(^NSHTTPURLResponse* () {return theResponse;});
-        //
-        //                theResponse stub_method(@selector(allHeaderFields))
-        //                .and_do_block(^NSDictionary* () {return @{@"access-token": @"new-token"};});
-        //
-        //                // seems like relevant issue: http://stackoverflow.com/questions/32462929/nsurlsessiondatatask-response-unrecognized-selector-crash-in-ios-9
-        //
-        //                simulateSuccess(operation, nil);
-        //            });
-        //
-        //            it(@"should update the auth token", ^{
-        //                subject.token should equal(@"new-token");
-        //            });
-        //
-        //            it(@"should call the SuccessBlock", ^{
-        //                successBlockCalled should be_truthy;
-        //            });
-        //        });
+        context(@"when the user/password is valid and the request succeeds", ^{
+            __block NSURLSessionTask *operation;
+            __block NSHTTPURLResponse *theResponse;
+            beforeEach(^{
+                operation = nice_fake_for([NSURLSessionTask class]);
+                theResponse = nice_fake_for([NSHTTPURLResponse class]);
+                
+                operation stub_method(@selector(response))
+                .and_return(theResponse);
+                
+                theResponse stub_method(@selector(allHeaderFields))
+                .and_return(@{@"access-token": @"new-token"});
+                
+                simulateSuccess(operation, nil);
+            });
+            
+            it(@"should update the auth token", ^{
+                subject.token should equal(@"new-token");
+            });
+            
+            it(@"should call the SuccessBlock", ^{
+                successBlockCalled should be_truthy;
+            });
+        });
         
         context(@"when the user/password is invalid and the request fails", ^{
             beforeEach(^{
@@ -176,15 +174,15 @@ describe(@"FireflyClient", ^{
         
         it(@"should make the right requests", ^{
             urlString should equal(@"/users/1/groups");
-//            successBlockCalled should be_truthy;
-//            NSTimeInterval timeInSeconds = [[NSDate date] timeIntervalSince1970];
-//            while ([urlString isEqual:@"/users/1/groups"]){
-//                if ([[NSDate date] timeIntervalSince1970] - timeInSeconds > 10) {
-//                    break;
-//                }
-//            }
-//            urlString should equal(@"/groups/1/users");
-//            urlString should equal(@"/groups/2/users");
+            //            successBlockCalled should be_truthy;
+            //            NSTimeInterval timeInSeconds = [[NSDate date] timeIntervalSince1970];
+            //            while ([urlString isEqual:@"/users/1/groups"]){
+            //                if ([[NSDate date] timeIntervalSince1970] - timeInSeconds > 10) {
+            //                    break;
+            //                }
+            //            }
+            //            urlString should equal(@"/groups/1/users");
+            //            urlString should equal(@"/groups/2/users");
         });
         
         it(@"should leave parameters and progress as nil", ^{
@@ -207,7 +205,9 @@ describe(@"FireflyClient", ^{
         });
         
         context(@"when the backend client returns an error for getting groups", ^{
-            failureBlockCalled should be_falsy;
+            it(@"should call the failure block", ^{
+                failureBlockCalled should be_truthy;
+            });
         });
         
     });
