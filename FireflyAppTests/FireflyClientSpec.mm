@@ -1,6 +1,6 @@
 #import "Cedar.h"
 #import "FireflyClient.h"
-//#import "AFNetworking/AFHTTPSessionManager.h"
+#import "SessionManager.h"
 
 using namespace Cedar::Matchers;
 using namespace Cedar::Doubles;
@@ -9,13 +9,13 @@ SPEC_BEGIN(FireflyClientSpec)
 
 describe(@"FireflyClient", ^{
     __block FireflyClient *subject;
-    __block AFHTTPSessionManager *manager;
+    __block SessionManager *manager;
     __block bool successBlockCalled;
     __block bool failureBlockCalled;
     
     
     beforeEach(^{
-        manager = nice_fake_for([AFHTTPSessionManager class]);
+        manager = nice_fake_for([SessionManager class]);
         subject = [[FireflyClient alloc] initWithManager:manager];
     });
     

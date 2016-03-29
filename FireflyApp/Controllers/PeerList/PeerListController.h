@@ -1,5 +1,4 @@
 #import <UIKit/UIKit.h>
-#import "Mapbox/Mapbox.h"
 #import "FireflyClient.h"
 #import "PeerListDataSourceDelegate.h"
 

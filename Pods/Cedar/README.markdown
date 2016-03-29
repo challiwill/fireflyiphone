@@ -30,7 +30,7 @@ describe(@"Example specs on NSString", ^{
 
 # Quick start
 
-* Add Cedar to your project via [Cocoapods](https://cocoapods.org/pods/Cedar) (`pod 'Cedar'`), [Carthage](https://github.com/Carthage/Carthage) (`github "pivotal/cedar"`), or [another method](https://github.com/pivotal/cedar/wiki/Installation#available-installation-methods)
+* Add Cedar to your project via [CocoaPods](https://cocoapods.org/pods/Cedar) (`pod 'Cedar'`), [Carthage](https://github.com/Carthage/Carthage) (`github "pivotal/cedar"`), or [another method](https://github.com/pivotal/cedar/wiki/Installation#available-installation-methods)
 * Install the Cedar Xcode file templates using the [Alcatraz package manager](http://alcatraz.io/) or by running this command in a terminal:
 ```
     $ curl -L https://raw.github.com/pivotal/cedar/master/install.sh | bash
@@ -67,4 +67,4 @@ Please read the [Contributor Guide](https://github.com/pivotal/cedar/wiki/Contri
 * [Sam Coward](mailto:scoward@pivotallabs.com) ([idoru](https://github.com/idoru)), Pivotal Labs, New York
 * [Tim Jarratt](mailto:tjarratt@pivotal.io) ([tjarratt](https://github.com/tjarratt)), Pivotal Labs, San Francisco
 
-Copyright (c) 2010-2014 Pivotal Labs. This software is licensed under the MIT License. [![Mixpanel](https://api.mixpanel.com/track/?data=CXsiZXZlbnQiOiAiSG9tZSBWaXNpdCIsIA0KICAgIAkJInByb3BlcnRpZXMiOiB7ICAJDQogICAgICAgIAkidG9rZW4iOiAiNmJjZmE3MmQ5OGU2ZjdhZjFkNjQ3YWNmY2Q2NjMwNTEiICAgDQogICAgICAgICAgICAgICAgfQ0KICAgICAgICB9&ip=1&img=1)](http://mixpanel.com)
+Copyright (c) 2010-2016 Pivotal Labs. This software is licensed under the MIT License. [![Mixpanel](https://api.mixpanel.com/track/?data=CXsiZXZlbnQiOiAiSG9tZSBWaXNpdCIsIA0KICAgIAkJInByb3BlcnRpZXMiOiB7ICAJDQogICAgICAgIAkidG9rZW4iOiAiNmJjZmE3MmQ5OGU2ZjdhZjFkNjQ3YWNmY2Q2NjMwNTEiICAgDQogICAgICAgICAgICAgICAgfQ0KICAgICAgICB9&ip=1&img=1)](http://mixpanel.com)

@@ -9,21 +9,17 @@
 // since it's provided by the devise gem
 @property (nonatomic) NSString *uid;
 
-@property (nonatomic) AFHTTPSessionManager *manager;
+@property (nonatomic) SessionManager *manager;
 
 @end
 
 @implementation FireflyClient
 
-- (instancetype)initWithManager:(AFHTTPSessionManager *)manager
+- (instancetype)initWithManager:(SessionManager *)manager
 {
     self = [super init];
     if (self) {
         self.manager = manager;
-        self.manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
-        [self.manager.securityPolicy setValidatesDomainName:NO];
-        [self.manager.securityPolicy setAllowInvalidCertificates:YES];
-        [self.manager.securityPolicy setValidatesDomainName:NO];
     }
     
     return self;
@@ -39,7 +35,6 @@
     
     [self.manager POST:@"/auth"
             parameters:params
-              progress:nil
                success:^(NSURLSessionTask *operation, id responseObject)
      {
          if (operation.response != nil) {
@@ -75,7 +70,6 @@
     
     [self.manager POST:@"/auth/sign_in"
             parameters:params
-              progress:nil
                success:^(NSURLSessionTask *operation, id responseObject)
      {
          if (operation.response != nil) {
@@ -135,7 +129,6 @@
     // TODO add logging
     [self.manager GET:groupsPath
            parameters:nil
-             progress:nil
               success:^(NSURLSessionTask *operation, id responseObject)
      {
          NSArray *groups;
@@ -159,7 +152,6 @@
     
     [self.manager POST:@"/groups"
             parameters:params
-              progress:nil
                success:^(NSURLSessionTask *operation, id responseObject){return successBlock();}
                failure:^(NSURLSessionTask *operation, NSError *error){return failureBlock();}
      ];
@@ -182,7 +174,6 @@
                              // TODO add logging
                              [self.manager GET:peersForGroupPath
                                     parameters:nil
-                                      progress:nil
                                        success:^(NSURLSessionTask *operation, id responseObject)
                               {
                                   NSArray *peersForGroup;
@@ -207,11 +198,11 @@
 // HELPERS
 - (void)prepareHeader
 {
-    [self.manager.requestSerializer setValue:self.token forHTTPHeaderField:@"access-token"];
-    [self.manager.requestSerializer setValue:@"Bearer" forHTTPHeaderField:@"token-type"];
-    [self.manager.requestSerializer setValue:self.client forHTTPHeaderField:@"client"];
-    [self.manager.requestSerializer setValue:self.expiry forHTTPHeaderField:@"expiry"];
-    [self.manager.requestSerializer setValue:self.uid forHTTPHeaderField:@"uid"];
+//    [self.manager.requestSerializer setValue:self.token forHTTPHeaderField:@"access-token"];
+//    [self.manager.requestSerializer setValue:@"Bearer" forHTTPHeaderField:@"token-type"];
+//    [self.manager.requestSerializer setValue:self.client forHTTPHeaderField:@"client"];
+//    [self.manager.requestSerializer setValue:self.expiry forHTTPHeaderField:@"expiry"];
+//    [self.manager.requestSerializer setValue:self.uid forHTTPHeaderField:@"uid"];
 }
 
 @end

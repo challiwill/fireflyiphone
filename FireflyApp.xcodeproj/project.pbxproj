@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		266AA2823C6DEC3E5DA8AB47 /* libPods-FireflyAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05A51A995421BD96BBCD00BA /* libPods-FireflyAppTests.a */; };
+		033AAC779E0F02E9E9BD864E /* libPods-FireflyApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35866E7CEE47AD00FBF7D2C5 /* libPods-FireflyApp.a */; };
+		768F3780D22F5BAB0F0A1623 /* libPods-FireflyAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CD6BC57100CADA574ABA19A /* libPods-FireflyAppTests.a */; };
 		9D19A3E71BB11E4B000D3C07 /* AppDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D19A3E61BB11E4B000D3C07 /* AppDelegateSpec.mm */; };
 		9D19A3E91BB11EC5000D3C07 /* FireflyClientSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D19A3E81BB11EC5000D3C07 /* FireflyClientSpec.mm */; };
 		9D1FD19E1BB27B0900577EB7 /* SignInControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FD19D1BB27B0900577EB7 /* SignInControllerSpec.mm */; };
 		9D2DDF561C8D1BCB002054FC /* PeerListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D2DDF551C8D1BCB002054FC /* PeerListController.m */; };
+		9D3002601CAA429500183BAE /* SessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D30025F1CAA429500183BAE /* SessionManager.m */; };
 		9D48D2471C8D5CF800DF712C /* Community.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D48D2461C8D5CF800DF712C /* Community.m */; };
 		9D698B9C1BE1F211004014A1 /* server.cer in Resources */ = {isa = PBXBuildFile; fileRef = 9D698B9B1BE1F211004014A1 /* server.cer */; };
 		9D6CCE771C8E939600A60E5F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6CCE761C8E939600A60E5F /* User.m */; };
@@ -38,7 +40,6 @@
 		9DCC9DE81C76DDFA00889265 /* CommunityListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC9DE71C76DDFA00889265 /* CommunityListController.m */; };
 		9DCC9DEE1C76E15400889265 /* CommunityListDataSourceDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC9DED1C76E15400889265 /* CommunityListDataSourceDelegate.m */; };
 		9DDE31261C15EC1200245408 /* StandardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE31251C15EC1200245408 /* StandardSegue.m */; };
-		FD6306847ACBEE67AB6F12F4 /* libPods-FireflyApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3832A687DE50C5E722BCF178 /* libPods-FireflyApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,14 +53,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05A51A995421BD96BBCD00BA /* libPods-FireflyAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FireflyAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3832A687DE50C5E722BCF178 /* libPods-FireflyApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FireflyApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		44F1A7C2291FD3E68395EA56 /* Pods-FireflyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireflyApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireflyApp/Pods-FireflyApp.release.xcconfig"; sourceTree = "<group>"; };
+		1CD6BC57100CADA574ABA19A /* libPods-FireflyAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FireflyAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		35866E7CEE47AD00FBF7D2C5 /* libPods-FireflyApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FireflyApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F7DBA2799DA1239B9B58834 /* Pods-FireflyAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireflyAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireflyAppTests/Pods-FireflyAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		9D19A3E61BB11E4B000D3C07 /* AppDelegateSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegateSpec.mm; sourceTree = "<group>"; };
 		9D19A3E81BB11EC5000D3C07 /* FireflyClientSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FireflyClientSpec.mm; sourceTree = "<group>"; };
 		9D1FD19D1BB27B0900577EB7 /* SignInControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SignInControllerSpec.mm; sourceTree = "<group>"; };
 		9D2DDF541C8D1BCB002054FC /* PeerListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeerListController.h; sourceTree = "<group>"; };
 		9D2DDF551C8D1BCB002054FC /* PeerListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeerListController.m; sourceTree = "<group>"; };
+		9D30025E1CAA429500183BAE /* SessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionManager.h; sourceTree = "<group>"; };
+		9D30025F1CAA429500183BAE /* SessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionManager.m; sourceTree = "<group>"; };
 		9D48D2421C8D4F0A00DF712C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9D48D2451C8D5CF800DF712C /* Community.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Community.h; sourceTree = "<group>"; };
 		9D48D2461C8D5CF800DF712C /* Community.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Community.m; sourceTree = "<group>"; };
@@ -104,9 +107,9 @@
 		9DCC9DED1C76E15400889265 /* CommunityListDataSourceDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityListDataSourceDelegate.m; sourceTree = "<group>"; };
 		9DDE31241C15EC1200245408 /* StandardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardSegue.h; sourceTree = "<group>"; };
 		9DDE31251C15EC1200245408 /* StandardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardSegue.m; sourceTree = "<group>"; };
-		B0F01F01E607D699A66F8BA1 /* Pods-FireflyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireflyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireflyApp/Pods-FireflyApp.debug.xcconfig"; sourceTree = "<group>"; };
-		FCA25C8D0270E4D31F778837 /* Pods-FireflyAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireflyAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireflyAppTests/Pods-FireflyAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		FF6661EADC0CE9A8E3B93F18 /* Pods-FireflyAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireflyAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireflyAppTests/Pods-FireflyAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AC72CD1C4740EB8CBFF0B43B /* Pods-FireflyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireflyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireflyApp/Pods-FireflyApp.debug.xcconfig"; sourceTree = "<group>"; };
+		EB2D74A2F31F6325A0DA0E7B /* Pods-FireflyAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireflyAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireflyAppTests/Pods-FireflyAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FC04A4AFD3DEC0003F6D509F /* Pods-FireflyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireflyApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireflyApp/Pods-FireflyApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D81997C1C4E91F9006EE164 /* CoreLocation.framework in Frameworks */,
-				FD6306847ACBEE67AB6F12F4 /* libPods-FireflyApp.a in Frameworks */,
+				033AAC779E0F02E9E9BD864E /* libPods-FireflyApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D81997F1C4E9426006EE164 /* CoreLocation.framework in Frameworks */,
-				266AA2823C6DEC3E5DA8AB47 /* libPods-FireflyAppTests.a in Frameworks */,
+				768F3780D22F5BAB0F0A1623 /* libPods-FireflyAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,21 +140,10 @@
 				9D48D2421C8D4F0A00DF712C /* UIKit.framework */,
 				9D81997D1C4E92EA006EE164 /* Foundation.framework */,
 				9D81997B1C4E91F9006EE164 /* CoreLocation.framework */,
-				05A51A995421BD96BBCD00BA /* libPods-FireflyAppTests.a */,
-				3832A687DE50C5E722BCF178 /* libPods-FireflyApp.a */,
+				35866E7CEE47AD00FBF7D2C5 /* libPods-FireflyApp.a */,
+				1CD6BC57100CADA574ABA19A /* libPods-FireflyAppTests.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		953F4F0E7B5DEED0CBA3D7AE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				FF6661EADC0CE9A8E3B93F18 /* Pods-FireflyAppTests.debug.xcconfig */,
-				FCA25C8D0270E4D31F778837 /* Pods-FireflyAppTests.release.xcconfig */,
-				B0F01F01E607D699A66F8BA1 /* Pods-FireflyApp.debug.xcconfig */,
-				44F1A7C2291FD3E68395EA56 /* Pods-FireflyApp.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		9DA246F81BA5EDE600088013 = {
@@ -160,8 +152,8 @@
 				9DA247031BA5EDE600088013 /* FireflyApp */,
 				9DA2471D1BA5EDE600088013 /* FireflyAppTests */,
 				9DA247021BA5EDE600088013 /* Products */,
-				953F4F0E7B5DEED0CBA3D7AE /* Pods */,
 				08168B572D8CE9A6444E5D44 /* Frameworks */,
+				D3B70186C604F779D9A778EA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,6 +179,8 @@
 				9DA247131BA5EDE600088013 /* LaunchScreen.xib */,
 				9DA247111BA5EDE600088013 /* Images.xcassets */,
 				9DA531C41C2C542C008BECCA /* Settings.bundle */,
+				9D30025E1CAA429500183BAE /* SessionManager.h */,
+				9D30025F1CAA429500183BAE /* SessionManager.m */,
 			);
 			path = FireflyApp;
 			sourceTree = "<group>";
@@ -333,6 +327,17 @@
 			path = /Users/corbin/Projects/fireflyiphone/FireflyApp/API;
 			sourceTree = "<absolute>";
 		};
+		D3B70186C604F779D9A778EA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC72CD1C4740EB8CBFF0B43B /* Pods-FireflyApp.debug.xcconfig */,
+				FC04A4AFD3DEC0003F6D509F /* Pods-FireflyApp.release.xcconfig */,
+				EB2D74A2F31F6325A0DA0E7B /* Pods-FireflyAppTests.debug.xcconfig */,
+				7F7DBA2799DA1239B9B58834 /* Pods-FireflyAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -340,12 +345,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DA247241BA5EDE700088013 /* Build configuration list for PBXNativeTarget "FireflyApp" */;
 			buildPhases = (
-				1D47557CB44308F76ED19102 /* Check Pods Manifest.lock */,
+				DBC9BFB404D0D67713E7699A /* 📦 Check Pods Manifest.lock */,
 				9DA246FD1BA5EDE600088013 /* Sources */,
 				9DA246FE1BA5EDE600088013 /* Frameworks */,
 				9DA246FF1BA5EDE600088013 /* Resources */,
-				C0D2B87D22E6184FAC2C7956 /* Copy Pods Resources */,
-				6B0BFC116590E4C3FBF4CEAA /* Embed Pods Frameworks */,
+				28EC7DDABA9A2C55FF7030DF /* 📦 Embed Pods Frameworks */,
+				51DE03E6BEBE485B3BE69A0A /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -360,12 +365,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DA247271BA5EDE700088013 /* Build configuration list for PBXNativeTarget "FireflyAppTests" */;
 			buildPhases = (
-				98BA0833E3049795B7BB78BB /* Check Pods Manifest.lock */,
+				EFD6BBDC4EAA7FC9525CE4BE /* 📦 Check Pods Manifest.lock */,
 				9DA247161BA5EDE600088013 /* Sources */,
 				9DA247171BA5EDE600088013 /* Frameworks */,
 				9DA247181BA5EDE600088013 /* Resources */,
-				74DAA25B5D0FE2C1D7858BA1 /* Copy Pods Resources */,
-				863DD35F47FE78146C84256D /* Embed Pods Frameworks */,
+				961EB4A0DEE5B30299260732 /* 📦 Embed Pods Frameworks */,
+				0A0473B9DDD370658C87636E /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -441,44 +446,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1D47557CB44308F76ED19102 /* Check Pods Manifest.lock */ = {
+		0A0473B9DDD370658C87636E /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		6B0BFC116590E4C3FBF4CEAA /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FireflyApp/Pods-FireflyApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		74DAA25B5D0FE2C1D7858BA1 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,14 +461,44 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FireflyAppTests/Pods-FireflyAppTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		863DD35F47FE78146C84256D /* Embed Pods Frameworks */ = {
+		28EC7DDABA9A2C55FF7030DF /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FireflyApp/Pods-FireflyApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51DE03E6BEBE485B3BE69A0A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FireflyApp/Pods-FireflyApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		961EB4A0DEE5B30299260732 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,14 +506,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FireflyAppTests/Pods-FireflyAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		98BA0833E3049795B7BB78BB /* Check Pods Manifest.lock */ = {
+		DBC9BFB404D0D67713E7699A /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,19 +521,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		C0D2B87D22E6184FAC2C7956 /* Copy Pods Resources */ = {
+		EFD6BBDC4EAA7FC9525CE4BE /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FireflyApp/Pods-FireflyApp-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -548,6 +553,7 @@
 				9DB96D211C8D313E00DDEF25 /* Peer.m in Sources */,
 				9D2DDF561C8D1BCB002054FC /* PeerListController.m in Sources */,
 				9DA247071BA5EDE600088013 /* main.m in Sources */,
+				9D3002601CAA429500183BAE /* SessionManager.m in Sources */,
 				9D48D2471C8D5CF800DF712C /* Community.m in Sources */,
 				9D98660B1C494B3D00B17E05 /* LocationManagerDelegate.m in Sources */,
 				9DCC9DEE1C76E15400889265 /* CommunityListDataSourceDelegate.m in Sources */,
@@ -677,7 +683,7 @@
 		};
 		9DA247251BA5EDE700088013 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0F01F01E607D699A66F8BA1 /* Pods-FireflyApp.debug.xcconfig */;
+			baseConfigurationReference = AC72CD1C4740EB8CBFF0B43B /* Pods-FireflyApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FireflyApp/Info.plist;
@@ -689,7 +695,7 @@
 		};
 		9DA247261BA5EDE700088013 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44F1A7C2291FD3E68395EA56 /* Pods-FireflyApp.release.xcconfig */;
+			baseConfigurationReference = FC04A4AFD3DEC0003F6D509F /* Pods-FireflyApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FireflyApp/Info.plist;
@@ -701,7 +707,7 @@
 		};
 		9DA247281BA5EDE700088013 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF6661EADC0CE9A8E3B93F18 /* Pods-FireflyAppTests.debug.xcconfig */;
+			baseConfigurationReference = EB2D74A2F31F6325A0DA0E7B /* Pods-FireflyAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -722,7 +728,7 @@
 		};
 		9DA247291BA5EDE700088013 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCA25C8D0270E4D31F778837 /* Pods-FireflyAppTests.release.xcconfig */;
+			baseConfigurationReference = 7F7DBA2799DA1239B9B58834 /* Pods-FireflyAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "AFNetworking/AFHTTPSessionManager.h"
+#import "SessionManager.h"
 #import "LocationManagerDelegate.h"
 #import "Community.h"
 #import "Peer.h"
@@ -9,7 +9,7 @@
 
 @property (nonatomic, readonly) NSString *token;
 
-- (instancetype)initWithManager:(AFHTTPSessionManager *)manager;
+- (instancetype)initWithManager:(SessionManager *)manager;
 
 // USER
 - (void)signUpWithUsername:(NSString *)username

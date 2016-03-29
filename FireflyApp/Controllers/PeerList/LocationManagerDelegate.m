@@ -3,7 +3,6 @@
 @interface LocationManagerDelegate ()
 
 // TODO get rid of mapView
-@property (nonatomic) MGLMapView *mapView;
 @property (nonatomic) FireflyClient *backendClient;
 @property(nonatomic) User *user;
 
@@ -12,13 +11,11 @@
 
 @implementation LocationManagerDelegate
 
-- (instancetype)initWithMapView:(MGLMapView *)mapView
-                  BackendClient:(FireflyClient *)backendClient
+- (instancetype)initWithBackendClient:(FireflyClient *)backendClient
                            User:(User *)user
 {
     self = [super init];
     if (self) {
-        self.mapView = mapView;
         self.backendClient = backendClient;
         self.user = user;
     }
@@ -44,9 +41,6 @@
 - (void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     CLLocation *newLocation = [locations lastObject];
-    [self.mapView setCenterCoordinate:newLocation.coordinate
-                            zoomLevel:15
-                             animated:NO];
     [self.backendClient updateLocation:newLocation
                                ForUser:self.user
                           SuccessBlock:nil
