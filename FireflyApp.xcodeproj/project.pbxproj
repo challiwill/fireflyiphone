@@ -30,6 +30,7 @@
 		9DA2472E1BA5F2E400088013 /* FireflyClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2472D1BA5F2E400088013 /* FireflyClient.m */; };
 		9DA531C51C2C542C008BECCA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9DA531C41C2C542C008BECCA /* Settings.bundle */; };
 		9DA9DE771C72A9F70089151A /* SignUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA9DE761C72A9F70089151A /* SignUpController.m */; };
+		9DAAEDA61CAB157D00B4ECE1 /* SessionManagerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9DAAEDA51CAB157D00B4ECE1 /* SessionManagerSpec.mm */; };
 		9DB96D151C8D2AE600DDEF25 /* CommunityListDataSourceDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9DB96D141C8D2AE600DDEF25 /* CommunityListDataSourceDelegateSpec.mm */; };
 		9DB96D171C8D2AFC00DDEF25 /* PeerListControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9DB96D161C8D2AFC00DDEF25 /* PeerListControllerSpec.mm */; };
 		9DB96D191C8D2B0A00DDEF25 /* SignUpControllerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9DB96D181C8D2B0A00DDEF25 /* SignUpControllerSpec.mm */; };
@@ -92,6 +93,7 @@
 		9DA531C41C2C542C008BECCA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9DA9DE751C72A9F70089151A /* SignUpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpController.h; sourceTree = "<group>"; };
 		9DA9DE761C72A9F70089151A /* SignUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpController.m; sourceTree = "<group>"; };
+		9DAAEDA51CAB157D00B4ECE1 /* SessionManagerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SessionManagerSpec.mm; sourceTree = "<group>"; };
 		9DB96D141C8D2AE600DDEF25 /* CommunityListDataSourceDelegateSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CommunityListDataSourceDelegateSpec.mm; sourceTree = "<group>"; };
 		9DB96D161C8D2AFC00DDEF25 /* PeerListControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PeerListControllerSpec.mm; sourceTree = "<group>"; };
 		9DB96D181C8D2B0A00DDEF25 /* SignUpControllerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SignUpControllerSpec.mm; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				9D19A3E81BB11EC5000D3C07 /* FireflyClientSpec.mm */,
 				9DB96D141C8D2AE600DDEF25 /* CommunityListDataSourceDelegateSpec.mm */,
 				9D8199791C49517F006EE164 /* LocationManagerDelegateSpec.mm */,
+				9DAAEDA51CAB157D00B4ECE1 /* SessionManagerSpec.mm */,
 			);
 			path = FireflyAppTests;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 				9DB96D1D1C8D2B2F00DDEF25 /* AddCommunityControllerSpec.mm in Sources */,
 				9D1FD19E1BB27B0900577EB7 /* SignInControllerSpec.mm in Sources */,
 				9D19A3E91BB11EC5000D3C07 /* FireflyClientSpec.mm in Sources */,
+				9DAAEDA61CAB157D00B4ECE1 /* SessionManagerSpec.mm in Sources */,
 				9DB96D1B1C8D2B2100DDEF25 /* CommunityListControllerSpec.mm in Sources */,
 				9D81997A1C49517F006EE164 /* LocationManagerDelegateSpec.mm in Sources */,
 			);
