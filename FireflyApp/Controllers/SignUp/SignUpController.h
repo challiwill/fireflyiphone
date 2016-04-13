@@ -9,5 +9,8 @@
 @property (nonatomic, readonly) FireflyClient *backendClient;
 
 - (instancetype)initWithBackendClient:(FireflyClient *)backendClient;
+- (void)cancel;
+- (void)signUpWithUsername:(NSString *)username Password:(NSString *)password SuccessBlock:(void (^)(User *))successBlock FailureBlock:(void (^)())failureBlock;
+- (void)segueToCommunityListController:(User *)user;
 
 @end

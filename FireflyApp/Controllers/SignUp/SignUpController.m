@@ -25,7 +25,7 @@
 }
 
 - (void)loadView
-{    
+{
     // TODO determine frames sizing and positioning
     self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 800)];
     self.emailField = [[UITextField alloc] initWithFrame:CGRectMake(35, 400, 300, 50)];
@@ -74,16 +74,26 @@
 
 - (void)signUp
 {
-    [self.backendClient signUpWithUsername:self.emailField.text
-                                  Password:self.passwordField.text
-                              SuccessBlock:^void (User *user) {[self segueToCommunityListController:user];}
-                              FailureBlock:^void () {NSLog(@"Sign Up failed");}];
+    [self signUpWithUsername:self.emailField.text
+                    Password:self.passwordField.text
+                SuccessBlock:^void (User *user) {[self segueToCommunityListController:user];}
+                FailureBlock:^void () {NSLog(@"Sign Up failed");}];
+}
+
+- (void)signUpWithUsername:(NSString *)username Password:(NSString *)password SuccessBlock:(void (^)(User *))successBlock FailureBlock:(void (^)())failureBlock
+{
+    NSLog(@"Calling backend client");
+    [self.backendClient signUpWithUsername:username
+                                  Password:password
+                              SuccessBlock:successBlock
+                              FailureBlock:failureBlock];
+    NSLog(@"Called backend client");
 }
 
 - (void)segueToCommunityListController:(User *)user
 {
     CommunityListController *communityListController = [[CommunityListController alloc] initWithBackendClient:self.backendClient User:user];
-
+    
     StandardSegue *segue = [[StandardSegue alloc]
                             initWithIdentifier:@"signUpToCommunityList"
                             source:self
