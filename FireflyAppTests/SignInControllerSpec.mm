@@ -32,7 +32,7 @@ describe(@"SignInController", ^{
             });
         });
     });
-
+    
     describe(@"-viewDidLoad", ^{
         subjectAction(^{
             [subject loadView];
@@ -45,8 +45,70 @@ describe(@"SignInController", ^{
     });
     
     describe(@"-signIn", ^{
-        // TODO delegates to backendClient which is tested independently
-        // still test success/failure block actions
+        __block NSString *username;
+        __block NSString *password;
+        __block void (^simulateSuccess)(User *);
+        __block void (^simulateFailure)();
+        __block bool successBlockCalled;
+        __block bool failureBlockCalled;
+        
+        beforeEach(^{
+            username = nil;
+            password = nil;
+            simulateSuccess = nil;
+            simulateFailure = nil;
+            successBlockCalled = false;
+            failureBlockCalled = false;
+            backendClient stub_method("signInWithUsername:Password:SuccessBlock:FailureBlock:")
+            .and_do_block(^(
+                            NSString *incomingUsername,
+                            NSString *incomingPassword,
+                            void (^incomingSuccessHandler)(User *),
+                            void (^incomingFailureHandler)()
+                            )
+                          {
+                              username = incomingUsername;
+                              password = incomingPassword;
+                              simulateSuccess = incomingSuccessHandler;
+                              simulateFailure = incomingFailureHandler;
+                          });
+            
+            [subject signInWithUsername:@"username"
+                               Password:@"password"
+                           SuccessBlock:^void(User *user){successBlockCalled = true;}
+                           FailureBlock:^void (){failureBlockCalled = true;}];
+            
+        });
+        
+        it(@"should sign in with correct username and password", ^{
+            username should equal(@"username");
+            password should equal(@"password");
+        });
+        
+        context(@"sign in succeeds", ^{
+            beforeEach(^{
+                User *user = nice_fake_for([User class]);
+                simulateSuccess(user);
+            });
+            
+            it(@"should call success block", ^{
+                successBlockCalled should be_truthy;
+            });
+            
+            it(@"should segue to peer list controller", ^{
+                //TODO: Not sure about testing segues
+            });
+        });
+        
+        context(@"sign in fails", ^{
+            beforeEach(^{
+                simulateFailure();
+            });
+            
+            it(@"should call failure block", ^{
+                failureBlockCalled should be_truthy;
+            });
+        });
     });
     
     // TODO how to test that segue happens?

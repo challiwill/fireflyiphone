@@ -65,13 +65,23 @@
 
 - (void)signIn
 {
+    //TODO for testing only - remove these
     self.emailField.text = @"testemail@berkeley.edu";
     self.passwordField.text = @"password";
+    
     // TODO some level of checks on user/password here (at least not empty)?
-    [self.backendClient signInWithUsername:self.emailField.text
-                                  Password:self.passwordField.text
-                              SuccessBlock:^void (User *user) {[self segueToPeerList:user];}
-                              FailureBlock:^void () {NSLog(@"Login failed");}];
+    [self signInWithUsername:self.emailField.text
+                    Password:self.passwordField.text
+                SuccessBlock:^void (User *user) {[self segueToPeerList:user];}
+                FailureBlock:^void () {NSLog(@"Login failed");}];
+}
+
+- (void)signInWithUsername:(NSString *)username Password:(NSString *)password SuccessBlock:(void (^)(User *))successBlock FailureBlock:(void (^)())failureBlock
+{
+    [self.backendClient signInWithUsername:username
+                                  Password:password
+                              SuccessBlock:successBlock
+                              FailureBlock:failureBlock];
 }
 
 - (void)segueToPeerList:(User *)user

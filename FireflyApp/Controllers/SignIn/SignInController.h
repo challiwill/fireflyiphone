@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) UIButton *signInButton;
 
 - (instancetype)initWithBackendClient:(FireflyClient *)backendClient;
-- (void)signIn;
+- (void)signInWithUsername:(NSString *)username Password:(NSString *)password SuccessBlock:(void (^)(User *))successBlock FailureBlock:(void (^)())failureBlock;
 - (void)segueToPeerList:(User *)user;
 
 @end
