@@ -12,7 +12,7 @@ describe(@"LocationManagerDelegate", ^{
     beforeEach(^{
         subject = [[LocationManagerDelegate alloc] init];
     });
-    
+    //TODO
     describe(@"initWithMapView:BackendClient:", ^{
         
     });

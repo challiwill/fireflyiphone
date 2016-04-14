@@ -12,7 +12,7 @@ describe(@"FireflyClient", ^{
     __block SessionManager *manager;
     __block bool successBlockCalled;
     __block bool failureBlockCalled;
-    
+    //TODO reimagine how backend client works
     
     beforeEach(^{
         manager = nice_fake_for([SessionManager class]);
@@ -21,7 +21,7 @@ describe(@"FireflyClient", ^{
     
     // USER
     describe(@"-signUpWithUsername:Password:SuccessBlock:FailureBlock:", ^{
-        
+        //TODO
     });
     
     describe(@"-signInWithUsername:Password:SuccessBlock:FailureBlock:", ^{

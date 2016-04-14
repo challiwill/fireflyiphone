@@ -12,6 +12,7 @@ describe(@"AddCommunityController", ^{
     beforeEach(^{
         subject = [[AddCommunityController alloc] init];
     });
+    //TODO
 });
 
 SPEC_END

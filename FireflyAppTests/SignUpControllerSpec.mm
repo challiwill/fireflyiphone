@@ -22,7 +22,7 @@ describe(@"SignUpController", ^{
         });
         
         it(@"should segue to SignIn", ^{
-            // Not sure about testing segues
+            //TODO: Not sure about testing segues
             // Could split into separate functions like signup
         });
     });
@@ -79,7 +79,7 @@ describe(@"SignUpController", ^{
             });
             
             it(@"should segue to community list controller", ^{
-                // Not sure about testing segues
+                //TODO: Not sure about testing segues
             });
         });
         

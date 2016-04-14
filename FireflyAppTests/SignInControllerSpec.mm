@@ -45,7 +45,7 @@ describe(@"SignInController", ^{
     });
     
     describe(@"-signIn", ^{
-        // delegates to backendClient which is tested independently
+        // TODO delegates to backendClient which is tested independently
         // still test success/failure block actions
     });
     
@@ -69,7 +69,7 @@ describe(@"SignInController", ^{
     });
     
     describe(@"segueToSignUpScreen", ^{
-        
+        //TODO should this even be tested?
     });
 });
 
